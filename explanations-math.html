@@ -12,6 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- MathJax for rendering math -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -88,58 +90,452 @@
                         </div>
                         <div class="card-body">
                             <ul>
-                                <li>Read each question carefully and identify what is being asked</li>
-                                <li>Show your work to avoid calculation errors</li>
-                                <li>Manage your time effectively - don't spend too long on any single question</li>
-                                <li>If you're stuck, eliminate obviously wrong answers first</li>
+                                <li>Don't leave any questions blank- at the 1 minute mark, start guessing</li>
+                                <li>Use your scratch paper- write out problems</li>
+                                <li>The time constraints are tight- don't spend too long on any single question. If
+                                    you're stuck, make a note of the question number on your scratch paper, guess, and
+                                    move on with the intention to come back.</li>
+                                <li>If you're stuck, eliminate obviously wrong answers first. Some questions are best
+                                    solved by checking every answer. </li>
                                 <li>Review your answers if time permits</li>
                             </ul>
                         </div>
                     </div>
 
+                    <!-- Pattern Recognition -->
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h5 class="mb-0">Algebra Tips</h5>
+                            <h5 class="mb-0">Pattern Recognition</h5>
                         </div>
                         <div class="card-body">
-                            <p>Content for algebra-specific strategies will be added here, including:</p>
+
+                            <h5>How to approach these problems</h5>
                             <ul>
-                                <li>Solving linear and quadratic equations</li>
-                                <li>Working with fractions and decimals</li>
-                                <li>Understanding order of operations</li>
-                                <li>Simplifying expressions</li>
+                                <li>Look for a pattern in the differences or ratios between adjacent numbers.</li>
+                                <li>Write out the differences / rations and look for a pattern in those. Writing them
+                                    out is the key to spotting patterns.</li>
                             </ul>
-                            <p class="text-muted"><em>Detailed strategies will be added in future updates.</em></p>
+                            <h5>Worked example</h5>
+                            <p class="mb-2"><strong>Try this pattern:</strong> What comes next in the sequence
+                                \(2,\,5,\,9,\,14,\,20,\,\ ?\)</p>
+                            <p class="text-muted"><em>Detailed explanation:</em> Compute first differences:
+                                \(5-2=3,\ 9-5=4,\ 14-9=5,\ 20-14=6\). Writing out the differences, we get \(3, 4, 5, 6\)
+                                and the pattern is more clear.
+                                The differences increase by 1 each time, so the
+                                next difference should be \(7\). Add it to the last term: \(20 + 7 = 27\). So the next
+                                term is \(27\).</p>
                         </div>
                     </div>
 
+                    <!-- Order of Operations and Multivariate Formulas -->
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h5 class="mb-0">Functions and Graphs</h5>
+                            <h5 class="mb-0">Order of Operations and Multivariate Formulas</h5>
                         </div>
                         <div class="card-body">
-                            <p>Content for functions and graphs strategies will be added here, including:</p>
+
+                            <h5>How to approach these problems</h5>
                             <ul>
-                                <li>Understanding function notation</li>
-                                <li>Interpreting graphs</li>
-                                <li>Identifying function properties</li>
+                                <li>These problems are order of operations / PEMDAS problems with extra steps of
+                                    variable substitution. </li>
+                                <li>Make sure you understand are are confident with order of operations with numbers
+                                    (practice problems 61-65).</li>
+                                <li>Write out the problem, substituting the values provided for the variables.</li>
+                                <li>Once it's written out, simplify one operation at a time in the correct order, just
+                                    like an order of operations problem.</li>
                             </ul>
-                            <p class="text-muted"><em>Detailed strategies will be added in future updates.</em></p>
+                            <h5>Worked example</h5>
+                            <p class="mb-3 text-center"><strong>Given:</strong> Evaluate</p>
+                            <p class="mb-3 text-center">\[u = \frac{5v + 3w}{2v - w} \text{ where } v = 6 \text{ and } w
+                                = 2\]</p>
+                            <ol>
+                                <li class="mb-2"><strong>Substitute the values:</strong>
+                                    \[u = \frac{5(6) + 3(2)}{2(6) - 2}\]
+                                </li>
+                                <li class="mb-2"><strong>Simplify the numerator:</strong>
+                                    \[u = \frac{30 + 6}{2(6) - 2} = \frac{36}{2(6) - 2}\]
+                                </li>
+                                <li class="mb-2"><strong>Simplify the denominator:</strong>
+                                    \[u = \frac{36}{12 - 2} = \frac{36}{10}\]
+                                </li>
+                                <li class="mb-2"><strong>Divide to get the final answer:</strong>
+                                    \[u = \frac{36}{10} = 3.6\]
+                                </li>
+                            </ol>
                         </div>
                     </div>
 
+                    <!-- Variable Relationships -->
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h5 class="mb-0">Number Series</h5>
+                            <h5 class="mb-0">Variable Relationships</h5>
                         </div>
                         <div class="card-body">
-                            <p>Content for number series strategies will be added here, including:</p>
+                            <h5>How to approach these problems</h5>
                             <ul>
-                                <li>Identifying arithmetic sequences</li>
-                                <li>Recognizing geometric patterns</li>
-                                <li>Finding missing terms in sequences</li>
+                                <li>These problems are pretty tricky, don't feel discouraged about them- there's other
+                                    problems on the test you can get right to make up for it. </li>
+                                <li>Identify which variable is changing and which variable(s) are held constant.</li>
+                                <li>Rewrite the formula to see the changing variable’s effect (factor or separate
+                                    terms when possible).</li>
+                                <li>Test with two easy values (one smaller, one larger) while holding the constant
+                                    fixed; compare the outputs.</li>
+                                <li>Note whether the relationship is direct (output goes up when input goes up),
+                                    inverse, or levels off.</li>
                             </ul>
-                            <p class="text-muted"><em>Detailed strategies will be added in future updates.</em></p>
+                            <h5>Worked example</h5>
+                            <p class="mb-2 text-center"><strong>Given:</strong> With \(q\) held constant, how does \(r\)
+                                change as \(p\) changes in
+                                \[\displaystyle r = \frac{4p + 6}{p + q}\]</p>
+                            <ol>
+                                <li class="mb-2"><strong>Pick a constant:</strong> Let \(q = 3\). Then
+                                    \[r = \frac{4p + 6}{p + 3}\]</li>
+                                <li class="mb-2"><strong>Test a smaller \(p\):</strong> If \(p = 3\),
+                                    \[r = \frac{4(3) + 6}{3 + 3} = \frac{18}{6} = 3\]</li>
+                                <li class="mb-2"><strong>Test a larger \(p\):</strong> If \(p = 9\),
+                                    \[r = \frac{4(9) + 6}{9 + 3} = \frac{42}{12} = 3.5\]</li>
+                                <li class="mb-2"><strong>Compare:</strong> As \(p\) increased from 3 to 9, \(r\)
+                                    increased from 3 to 3.5, so \(r\) increases with \(p\) when \(q\) is held
+                                    constant.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- 2D Graphing and Inequalities -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">2D Graphing and Inequalities</h5>
+                        </div>
+                        <div class="card-body">
+                            <h5>How to approach these problems</h5>
+                            <ul>
+                                <li>In my opinion the most reliable way to solve these problems consistently is to graph
+                                    them. You can also plug in numbers to check the statements.
+                                <li> Don't let weird variables like p and qtrip you up- they are no different than
+                                    graphing x and y
+                                    equations.</li>
+                                <li>First, solve the equation for one variable in terms of the other (usually solve for
+                                    the variable on the left side).</li>
+                                <li>Pick easy values (like 0, 1, or 2) for one variable and calculate the corresponding
+                                    value of the other variable to find points on the line.</li>
+                                <li>Plot at least two points to visualize the line's direction and position.</li>
+                                <li>Use the graph to test each answer choice by checking if the given conditions make
+                                    sense with the line's behavior.</li>
+
+                            </ul>
+                            <h5>Worked example</h5>
+                            <p class="mb-3 text-center"><strong>Given:</strong> Determine which statement is true for
+                                the equation</p>
+                            <p class="mb-3 text-center">\[2m - 5 = 4n + 3\]</p>
+
+                            <p class="mb-2"><strong>Answer choices:</strong></p>
+                            <div class="mb-2">
+                                <p><strong>A.</strong> If \(n\) is greater than 1, then \(m\) is greater than 8</p>
+                            </div>
+                            <div class="mb-2">
+                                <p><strong>B.</strong> If \(n\) is less than 0, then \(m\) is less than 4</p>
+                            </div>
+                            <div class="mb-2">
+                                <p><strong>C.</strong> If \(m\) is greater than 10, then \(n\) is negative</p>
+                            </div>
+                            <div class="mb-2">
+                                <p><strong>D.</strong> If \(m\) is less than 2, then \(n\) is greater than 1</p>
+                            </div>
+
+                            <p class="mb-2 mt-4"><strong>Step 1: Solve for variable on left hand side of equation,
+                                    \(m\)</strong></p>
+                            <p class="mb-2">Add 5 to both sides:</p>
+                            <p class="mb-3 text-center">\[2m = 4n + 8\]</p>
+                            <p class="mb-2">Divide both sides by 2:</p>
+                            <p class="mb-4 text-center">\[m = 2n + 4\]</p>
+
+                            <p class="mb-2"><strong>Step 2: Find two points to graph the line</strong></p>
+                            <p class="mb-2">Let's use \(n = 0\) and \(n = 1\) for easy calculations:</p>
+                            <ul class="mb-3">
+                                <li>When \(n = 0\): \(m = 2(0) + 4 = 4\), so the point is \((0, 4)\)</li>
+                                <li>When \(n = 1\): \(m = 2(1) + 4 = 6\), so the point is \((1, 6)\)</li>
+                            </ul>
+
+                            <p class="mb-2"><strong>Step 3: Draw the Graph</strong></p>
+                            <p class="mb-2">Use the left hand side variable as the y axis and the right hand side
+                                variable as the x axis.</p>
+                            <div class="mb-3 text-center">
+                                <img src="assets/images/2d-graph-1.png" alt="Graph showing the line m = 2n + 4"
+                                    class="img-fluid" style="max-width: 60%; height: auto;">
+                            </div>
+
+                            <p class="mb-2"><strong>Step 4: Graph the line</strong></p>
+                            <ul>
+                                <li>Plot the two points we calculated: (0, 4) and (1, 6). I like to use a table off to
+                                    the side to write them down.</li>
+                                <li>Draw a straight line through the points.</li>
+                            </ul>
+                            <div class="mb-4 text-center">
+                                <img src="assets/images/2d-graph-2.png" alt="Graph with table showing m and n values"
+                                    class="img-fluid" style="max-width: 60%; height: auto;">
+                            </div>
+
+                            <p class="mb-2"><strong>Step 5: Test each answer choice</strong></p>
+                            <p class="mb-2">Which of the following statements is true?</p>
+                            <div class="mb-2">
+                                <p><strong>A.</strong> If \(n\) is greater than 1, then \(m\) is greater than 8</p>
+                                <p class="text-muted ms-3">Test: If \(n = 1.5\), then \(m = 2(1.5) + 4 = 7\). Since \(7
+                                    < 8\), this is <strong>false</strong>.
+                                </p>
+                            </div>
+                            <div class="mb-2">
+                                <p><strong>B.</strong> If \(n\) is less than 0, then \(m\) is less than 4</p>
+                                <p class="text-muted ms-3">Test: If \(n = -1\), then \(m = 2(-1) + 4 = 2\). Since \(2 <
+                                        4\), this is <strong>true</strong>.</p>
+                            </div>
+                            <div class="mb-2">
+                                <p><strong>C.</strong> If \(m\) is greater than 10, then \(n\) is negative</p>
+                                <p class="text-muted ms-3">Test: If \(m = 12\), then \(12 = 2n + 4\), so \(2n = 8\) and
+                                    \(n = 4\). Since \(4\) is positive, this is <strong>false</strong>.</p>
+                            </div>
+                            <div class="mb-2">
+                                <p><strong>D.</strong> If \(m\) is less than 2, then \(n\) is greater than 1</p>
+                                <p class="text-muted ms-3">Test: If \(m = 0\), then \(0 = 2n + 4\), so \(2n = -4\) and
+                                    \(n = -2\). Since \(-2 < 1\), this is <strong>false</strong>.</p>
+                            </div>
+                            <p class="mt-3"><strong>Answer:</strong> Only B is true. We can either plug in numbers to
+                                test, or look at the graph. It's a good idea to do both if time permits.</p>
+                        </div>
+                    </div>
+
+                    <!-- Factoring and Expanding -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Factoring and Expanding</h5>
+                        </div>
+                        <div class="card-body">
+                            <h5>How to approach these problems</h5>
+                            <ul>
+                                <li>For expanding: Use FOIL (First, Outer, Inner, Last) to multiply each term in the
+                                    first parentheses by each term in the second parentheses.</li>
+                                <li>After FOILing, combine like terms carefully—<strong>watch the signs!</strong></li>
+                                <li>For factoring: If you're given answer choices, FOIL each one and see which matches
+                                    the original expression.</li>
+                                <li>When FOILing to check, write out all four products clearly before combining like
+                                    terms.</li>
+                            </ul>
+                            <h5>Worked example: Expanding</h5>
+                            <p class="mb-3 text-center"><strong>Expand:</strong> \((3h - 2k)(2h + 5k)\)</p>
+
+                            <p class="mb-2"><strong>Step 1: Apply FOIL</strong></p>
+                            <p class="mb-2">Multiply each term:</p>
+                            <ul class="mb-3">
+                                <li><strong>First:</strong> \(3h \times 2h = 6h^2\)</li>
+                                <li><strong>Outer:</strong> \(3h \times 5k = 15hk\)</li>
+                                <li><strong>Inner:</strong> \((-2k) \times 2h = -4hk\)</li>
+                                <li><strong>Last:</strong> \((-2k) \times 5k = -10k^2\)</li>
+                            </ul>
+
+                            <p class="mb-2"><strong>Step 2: Write out all terms</strong></p>
+                            <p class="mb-3 text-center">\[6h^2 + 15hk - 4hk - 10k^2\]</p>
+
+                            <p class="mb-2"><strong>Step 3: Combine like terms</strong></p>
+                            <p class="mb-2">Combine the \(hk\) terms: \(15hk - 4hk = 11hk\)</p>
+                            <p class="mb-4 text-center">\[6h^2 + 11hk - 10k^2\]</p>
+
+                            <h5 class="mt-4">Worked example: Factoring</h5>
+                            <p class="mb-3 text-center"><strong>Factor:</strong> \(6r^2 - 7rs - 3s^2\)</p>
+
+                            <p class="mb-2"><strong>Answer choices:</strong></p>
+                            <div class="mb-2">
+                                <p><strong>A.</strong> \((3r + s)(2r - 3s)\)</p>
+                            </div>
+                            <div class="mb-2">
+                                <p><strong>B.</strong> \((2r + 3s)(3r - s)\)</p>
+                            </div>
+                            <div class="mb-2">
+                                <p><strong>C.</strong> \((6r + s)(r - 3s)\)</p>
+                            </div>
+                            <div class="mb-2">
+                                <p><strong>D.</strong> \((3r - s)(2r + 3s)\)</p>
+                            </div>
+
+                            <p class="mb-2 mt-3"><strong>Step 1: Check choice A by FOILing</strong></p>
+                            <p class="mb-2">\((3r + s)(2r - 3s)\):</p>
+                            <ul class="mb-2">
+                                <li>First: \(3r \times 2r = 6r^2\)</li>
+                                <li>Outer: \(3r \times (-3s) = -9rs\)</li>
+                                <li>Inner: \(s \times 2r = 2rs\)</li>
+                                <li>Last: \(s \times (-3s) = -3s^2\)</li>
+                            </ul>
+                            <p class="mb-3 text-center">\[6r^2 - 9rs + 2rs - 3s^2 = 6r^2 - 7rs - 3s^2 \quad \checkmark\]
+                            </p>
+                            <p class="mb-4 text-success"><strong>This matches! Choice A is correct.</strong></p>
+
+                            <p class="mb-2"><strong>Step 2: Verify other choices (for practice)</strong></p>
+                            <p class="mb-2"><strong>Choice B:</strong> \((2r + 3s)(3r - s)\)</p>
+                            <p class="mb-2 text-center">\[6r^2 - 2rs + 9rs - 3s^2 = 6r^2 + 7rs - 3s^2
+                                \quad \text{(wrong sign on middle term)}\]</p>
+
+                            <p class="mb-2"><strong>Choice C:</strong> \((6r + s)(r - 3s)\)</p>
+                            <p class="mb-2 text-center">\[6r^2 - 18rs + rs - 3s^2 = 6r^2 - 17rs - 3s^2 \quad
+                                \text{(wrong coefficient)}\]</p>
+
+                            <p class="mb-2"><strong>Choice D:</strong> \((3r - s)(2r + 3s)\)</p>
+                            <p class="mb-3 text-center">\[6r^2 + 9rs - 2rs - 3s^2 = 6r^2 + 7rs - 3s^2
+                                \quad \text{(wrong sign on middle term)}\]</p>
+
+                            <p class="mt-3"><strong>Answer:</strong> Only choice A expands to \(6r^2 - 7rs - 3s^2\), so
+                                it is the correct factorization.</p>
+                        </div>
+                    </div>
+
+                    <!-- Multiple Representations -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Multiple Representations</h5>
+                        </div>
+                        <div class="card-body">
+                            <h5>How to approach these problems</h5>
+                            <ul>
+                                <li><strong>Be familiar with types of graphs:</strong> Linear graphs are straight lines
+                                    (equations like \(y = mx + b\)). Quadratic graphs are curved (equations with \(x^2\)
+                                    terms). <strong>It's only a curved line in a graph if there is an exponent or square
+                                        root!</strong></li>
+                                <li>Write out statements into formulas accurately. Read carefully: "y is x times itself"
+                                    means \(y = x^2\), not \(y = 2x\).</li>
+                                <li>Plot 3 points from tables and connect them. If the line curves, it's non-linear.
+                                </li>
+                                <li>A systematic way to solve: Find three points from the given representation
+                                    (statement, table, graph, or function) and check to see if they all exist on each
+                                    answer choice. The correct answer will have all three points match.</li>
+                            </ul>
+                            <h5>Worked example</h5>
+                            <p class="mb-3 text-center"><strong>Problem statement:</strong> "y is x times itself plus
+                                two"</p>
+
+                            <p class="mb-2"><strong>Step 1: Convert the statement to a formula</strong></p>
+                            <p class="mb-2">"y is x times itself plus two" means:</p>
+                            <p class="mb-3 text-center">\[y = x^2 + 2\]</p>
+
+                            <p class="mb-2"><strong>Step 2: Find three points to test</strong></p>
+                            <p class="mb-2">Let's calculate a few points from \(y = x^2 + 2\):</p>
+                            <ul class="mb-3">
+                                <li>When \(x = 0\): \(y = 0^2 + 2 = 2\), so the point is \((0, 2)\)</li>
+                                <li>When \(x = 1\): \(y = 1^2 + 2 = 3\), so the point is \((1, 3)\)</li>
+                                <li>When \(x = 2\): \(y = 2^2 + 2 = 6\), so the point is \((2, 6)\)</li>
+                            </ul>
+
+                            <p class="mb-2"><strong>Step 3: Check each answer choice</strong></p>
+                            <p class="mb-2"><strong>Answer choices:</strong></p>
+
+                            <div class="mb-3">
+                                <p><strong>A. Table:</strong></p>
+                                <table class="table table-bordered" style="max-width: 200px;">
+                                    <thead>
+                                        <tr>
+                                            <th>\(x\)</th>
+                                            <th>\(y\)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>10</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="text-muted ms-3">Test: Our point \((0, 2)\) should have \(y = 1\) in this
+                                    table, but it doesn't. <strong>Incorrect.</strong></p>
+                            </div>
+
+                            <div class="mb-3">
+                                <p><strong>B. Graph 1:</strong></p>
+                                <div class="text-center">
+                                    <img src="assets/images/graph-strategies-1.png" alt="Graph 1" class="img-fluid"
+                                        style="max-width: 50%; height: auto;">
+                                </div>
+                                <p class="text-muted ms-3">Test: Check if points \((0, 2)\), \((1, 3)\), and \((2, 6)\)
+                                    are on this graph. Looking at the graph, we can see that the point \((1, 3)\) is not
+                                    on the line.
+                                    <strong>Since one of the points is missing, this graph is incorrect.</strong>
+                                </p>
+                            </div>
+
+                            <div class="mb-3">
+                                <p><strong>C. Graph 2:</strong></p>
+                                <div class="text-center">
+                                    <img src="assets/images/graph-strategies-2.png" alt="Graph 2" class="img-fluid"
+                                        style="max-width: 50%; height: auto;">
+                                </div>
+                                <p class="text-muted ms-3">Test: Check if points \((0, 2)\), \((1, 3)\), and \((2, 6)\)
+                                    are on this graph. All three points are. The graph is also curved, which is correct
+                                    since we had an exponent
+                                    in the equation. <strong>Correct.</strong></p>
+                            </div>
+
+                            <div class="mb-3">
+                                <p><strong>D. Function:</strong> \(y = 2x + 2\)</p>
+                                <p class="text-muted ms-3">Test: Check our points:
+                                <ul>
+                                    <li>\((0, 2)\): \(y = 2(0) + 2 = 2\) ✓</li>
+                                    <li>\((1, 3)\): \(y = 2(1) + 2 = 4\) ✗ (should be 3)</li>
+                                    <li>\((2, 6)\): \(y = 2(2) + 2 = 6\) ✓</li>
+                                </ul>
+                                Only 2 out of 3 points match. <strong>Incorrect.</strong>
+                                </p>
+                            </div>
+
+                            <p class="mt-3"><strong>Answer:</strong> Only Graph 2 (choice C) correctly represents \(y =
+                                x^2 + 2\). Notice that it's a curved line (parabola), which makes sense because the
+                                equation has an \(x^2\) term.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fractions and Arithmetic -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Fractions and Arithmetic</h5>
+                        </div>
+                        <div class="card-body">
+                            <h5>How to approach these problems</h5>
+                            <p class="mb-3">These problems test fundamental arithmetic skills. If you're struggling with
+                                fractions, decimals, long division, or multi-digit multiplication, <strong>the best
+                                    approach is to use external learning resources</strong> to build these skills:</p>
+                            <ul>
+                                <li><strong>Khan Academy:</strong> Excellent free video tutorials and practice problems
+                                    for all arithmetic operations. Search for topics like "adding fractions,"
+                                    "multiplying decimals," or "long division."</li>
+                                <li><strong>YouTube:</strong> Search for instructional videos on any specific topic you
+                                    need help with. There are countless step-by-step tutorials available.</li>
+                                <li><strong>AI Tools (ChatGPT, Claude, etc.):</strong> You can ask these tools to
+                                    explain how to solve specific types of problems and walk you through examples
+                                    step-by-step.</li>
+                                <li><strong>Google Search:</strong> Simply searching for "how to add fractions," "how to
+                                    multiply decimals," or "how to do long division" will return plenty of helpful
+                                    articles, videos, and tutorials.</li>
+                            </ul>
+                            <p class="mb-3">Once you understand the methods, practice is key. Use the practice problems
+                                on this site to test your skills, but don't hesitate to review the fundamentals using
+                                the resources above if needed.</p>
+                            <h5>Key concepts to master</h5>
+                            <ul>
+                                <li><strong>Fractions:</strong> Finding common denominators for addition/subtraction,
+                                    multiplying numerators and denominators, dividing by multiplying by the reciprocal
+                                </li>
+                                <li><strong>Decimals:</strong> Lining up decimal points for addition/subtraction,
+                                    counting decimal places for multiplication</li>
+                                <li><strong>Long Division:</strong> Breaking down the division process step-by-step</li>
+                                <li><strong>Multi-digit Multiplication:</strong> Using the standard algorithm or
+                                    distribution method</li>
+                            </ul>
                         </div>
                     </div>
 
