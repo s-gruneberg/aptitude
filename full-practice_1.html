@@ -8,6 +8,9 @@
     <meta name="description"
         content="Complete practice exam for the Electrical apprenticeship aptitude test covering both math and reading sections.">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon_32.png">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -18,16 +21,17 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Electrical Aptitude Test Practice</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/icon_32.png" alt="Electrical Aptitude Test Prep" height="32" width="32"
+                    class="me-2">
+                Electrical Aptitude Test Prep
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="full-practice_1.html">Exam 1</a>
                     </li>
@@ -41,13 +45,16 @@
                         <a class="nav-link" href="practice-reading.html">Reading Practice</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="explanations-math.html">Math Strategies</a>
+                        <a class="nav-link" href="explanations-math.html"> Math Help</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="explanations-reading.html">Reading Strategies</a>
+                        <a class="nav-link" href="explanations-reading.html">Reading Tips</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="donate.html">Donate</a>
                     </li>
                 </ul>
             </div>
@@ -60,8 +67,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1 class="mb-4">Exam 1</h1>
-                    <p class="lead">This practice exam includes both math and reading comprehension sections. Take your
-                        time and work through each question carefully.</p>
+                    <p class="lead">This practice exam includes both math and reading comprehension sections. </p>
 
                     <!-- Exam Instructions -->
                     <div class="card mb-4">
@@ -72,8 +78,9 @@
                             <ul class="mb-0">
                                 <li>This practice exam simulates the format of the actual Electrical aptitude test</li>
                                 <li>You will have questions from both the math and reading sections</li>
-                                <li>Take your time and read each question carefully</li>
-                                <li>Review your answers before submitting</li>
+                                <li>Each section should be timed for 50 minutes</li>
+                                <li>Take a 10 minute break between the sections</li>
+                                <li>Only use scratch paper- no calculator</li>
                             </ul>
                         </div>
                     </div>
@@ -91,36 +98,36 @@
                             <!-- Question 1: Difficult (Multiplication factor) -->
                             <div class="question mb-4" data-question="m1" data-correct="C">
                                 <p class="fw-bold">1. What number comes next in this sequence?</p>
-                                <p class="mb-2"><strong>\(4, 7, 1, 10, -8, ?\)</strong></p>
+                                <p class="mb-2"><strong>\(4, 7, 1, 10, -2, ?\)</strong></p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m1" id="m1a" value="A">
-                                    <label class="form-check-label" for="m1a">A. 20</label>
+                                    <label class="form-check-label" for="m1a">A. 11</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m1" id="m1b" value="B">
-                                    <label class="form-check-label" for="m1b">B. 24</label>
+                                    <label class="form-check-label" for="m1b">B. -8</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m1" id="m1c" value="C">
-                                    <label class="form-check-label" for="m1c">C. 28</label>
+                                    <label class="form-check-label" for="m1c">C. 13</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m1" id="m1d" value="D">
-                                    <label class="form-check-label" for="m1d">D. -20</label>
+                                    <label class="form-check-label" for="m1d">D. -6</label>
                                 </div>
                             </div>
 
                             <!-- Question 2: Difficult (Multiply by previous) -->
                             <div class="question mb-4" data-question="m2" data-correct="D">
                                 <p class="fw-bold">2. What number comes next in this sequence?</p>
-                                <p class="mb-2"><strong>\(2, 4, 8, 32, ?\)</strong></p>
+                                <p class="mb-2"><strong>\(2, 4, 8, 32, 64, ?\)</strong></p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m2" id="m2a" value="A">
-                                    <label class="form-check-label" for="m2a">A. 64</label>
+                                    <label class="form-check-label" for="m2a">A. 72</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m2" id="m2b" value="B">
-                                    <label class="form-check-label" for="m2b">B. 128</label>
+                                    <label class="form-check-label" for="m2b">B. 256</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m2" id="m2c" value="C">
@@ -128,7 +135,7 @@
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m2" id="m2d" value="D">
-                                    <label class="form-check-label" for="m2d">D. 256</label>
+                                    <label class="form-check-label" for="m2d">D. 128</label>
                                 </div>
                             </div>
 
@@ -2189,11 +2196,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2024 Electrical Aptitude Test Practice. Free educational resource.</p>
+                    <p class="mb-0">&copy; 2025 Electrical Aptitude Test Prep. Free educational resource</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="about.html" class="text-decoration-none me-3">About</a>
-                    <a href="about.html#donate" class="text-decoration-none">Support This Site</a>
+                    <a href="contact.html" class="text-decoration-none me-3">Contact</a>
+                    <a href="donate.html" class="text-decoration-none">Donate</a>
                 </div>
             </div>
         </div>
@@ -2219,24 +2227,24 @@
         // Answer explanations for each question
         const answerExplanations = {
             // Math Section: Pattern Recognition (Questions m1-m5)
-            m1: "The differences are: +3, -6, +9, -18. The absolute values are 3, 6, 9, 18. The pattern in absolute values: 3×2=6, then 6+3=9, then 9×2=18. So it alternates between multiplying by 2 and adding 3. The next absolute value would be 18+3=21 or 18×2=36. If we continue the pattern (multiply by 2), the next difference is +36, so -8 + 36 = 28.",
-            m2: "The pattern is: 2×2=4, 4×2=8, 8×4=32. Each number is multiplied by the previous number. So 32×8=256.",
+            m1: "The differences are: +3, -6, +9, -12. So the next number is -2 + 15 = 13.",
+            m2: "The pattern is: 2, 4, 8, 32, 64. Each number is multiplied by 2, so the next answer is 64 × 2 = 128.",
             m3: "The differences are: +3, -2, +3, -2. The pattern alternates between adding 3 and subtracting 2. The next difference should be +3, so 8 + 3 = 11.",
             m4: "The differences are: +2, -3, +4, -5. The pattern alternates between adding and subtracting, with the absolute values increasing by 1 each time. The next difference should be +6, so -1 + 6 = 5.",
             m5: "The differences are: -3, +4, -5, +6. The pattern alternates between subtracting and adding, with the absolute values increasing by 1 each time. The next difference should be -7, so 10 - 7 = 3.",
             // Math Section: Multivariate Formulas (Questions m6-m15)
-            m6: "Substitute v=8 and w=6: u = 3(8) / 2(6) = 24 / 12 = 2.",
-            m7: "Substitute f=6 and d=3: g = 6² / 4(3) = 36 / 12 = 3.",
-            m8: "Substitute t=12 and k=3: e = √(3t) / (k/2) = √(3×12) / (3/2) = √36 / 1.5 = 6 / 1.5 = 4.",
-            m9: "Substitute n=10 and p=3: m = 3(10-2) / 4(3) = 3(8) / 12 = 24 / 12 = 2.",
-            m10: "Substitute j=9: i = 5(9) / 3 = 45 / 3 = 15.",
-            m11: "Substitute v=2 and w=4: u = 2v³ / (5w/2) = 2(2³) / (5×4/2) = 2(8) / (20/2) = 16 / 10 = 1.6.",
-            m12: "Substitute f=8 and d=2: g = √(8×8) / 2 = √64 / 2 = 8 / 2 = 4.",
-            m13: "Substitute t=5, k=2, and w=4: e = 4(5+1) / (3(2)+4) = 4(6) / (6+4) = 24 / 10 = 2.4.",
-            m14: "Substitute n=7, p=2, and q=2: m = 6(7) / (2(2)+2) = 42 / (4+2) = 42 / 6 = 7.",
-            m15: "Substitute j=4 and k=2: i = (3(4)-6) / (2(4)+2) = (12-6) / (8+2) = 6 / 10 = 0.6.",
+            m6: "Substitute \\(v = 8\\) and \\(w = 6\\) into \\(u = \\frac{3v}{2w}\\): \\(u = \\frac{3(8)}{2(6)} = \\frac{24}{12} = 2\\).",
+            m7: "Substitute \\(f = 6\\) and \\(d = 3\\) into \\(g = \\frac{f^2}{4d}\\): \\(g = \\frac{6^2}{4(3)} = \\frac{36}{12} = 3\\).",
+            m8: "Substitute \\(t = 12\\) and \\(k = 3\\) into \\(e = \\frac{\\sqrt{3t}}{k/2}\\): \\(e = \\frac{\\sqrt{3(12)}}{3/2} = \\frac{\\sqrt{36}}{1.5} = \\frac{6}{1.5} = 4\\).",
+            m9: "Substitute \\(n = 10\\) and \\(p = 3\\) into \\(m = \\frac{3(n-2)}{4p}\\): \\(m = \\frac{3(10-2)}{4(3)} = \\frac{3(8)}{12} = \\frac{24}{12} = 2\\).",
+            m10: "Substitute \\(j = 9\\) into \\(i = \\frac{5j}{3}\\): \\(i = \\frac{5(9)}{3} = \\frac{45}{3} = 15\\).",
+            m11: "Substitute \\(v = 2\\) and \\(w = 4\\) into \\(u = \\frac{2v^3}{5w/2}\\): \\(u = \\frac{2(2^3)}{5(4)/2} = \\frac{2(8)}{20/2} = \\frac{16}{10} = 1.6\\).",
+            m12: "Substitute \\(f = 8\\) and \\(d = 2\\) into \\(g = \\frac{\\sqrt{f \\times f}}{d}\\): \\(g = \\frac{\\sqrt{8 \\times 8}}{2} = \\frac{\\sqrt{64}}{2} = \\frac{8}{2} = 4\\).",
+            m13: "Substitute \\(t = 5\\), \\(k = 2\\), and \\(w = 4\\) into \\(e = \\frac{4(t+1)}{3k+w}\\): \\(e = \\frac{4(5+1)}{3(2)+4} = \\frac{4(6)}{6+4} = \\frac{24}{10} = 2.4\\).",
+            m14: "Substitute \\(n = 7\\), \\(p = 2\\), and \\(q = 2\\) into \\(m = \\frac{6n}{2p+q}\\): \\(m = \\frac{6(7)}{2(2)+2} = \\frac{42}{4+2} = \\frac{42}{6} = 7\\).",
+            m15: "Substitute \\(j = 4\\) and \\(k = 2\\) into \\(i = \\frac{3j-6}{2j+k}\\): \\(i = \\frac{3(4)-6}{2(4)+2} = \\frac{12-6}{8+2} = \\frac{6}{10} = 0.6\\).",
             // Math Section: Variable Relationships (Questions m16-m19)
-            m16: "Rewriting: y = (z-x)/z + 5 = 1 - x/z + 5 = 6 - x/z. Since x is constant, as z increases, x/z decreases, so -x/z increases, and therefore y increases. Answer: As z increases, y increases.",
+            m16: "We rewrite the expression as \\(y = \\frac{z - x}{z} + 5 = 1 - \\frac{x}{z} + 5 = 6 - \\frac{x}{z}\\). Since \\(x\\) is held constant, as \\(z\\) increases the fraction \\(\\frac{x}{z}\\) decreases. Subtracting a smaller number means \\(y\\) increases. Therefore, as \\(z\\) increases, \\(y\\) increases, so statement A is true.",
             m17: "Since c is constant, (c+2)/√c is a constant factor. The formula becomes b = constant × (a-3). As a increases, (a-3) increases, so b increases proportionally. Answer: As a increases, b increases.",
             m18: "Rewriting: p = (m·n)/(m+k) = n·m/(m+k). Since n and k are constant, as m increases, the ratio m/(m+k) increases (approaching 1 as m gets very large). Therefore p increases. Answer: As m increases, p increases.",
             m19: "Since w is constant, as v increases, the numerator √v increases (but at a slower rate than linear), while the denominator v + w increases linearly. Since the denominator grows faster than the numerator, the ratio decreases. Answer: As v increases, u decreases.",
