@@ -85,6 +85,14 @@
                         </div>
                     </div>
 
+                    <!-- Clear Answers Button (Top) -->
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <button id="clearAnswersBtnTop" class="btn btn-danger btn-lg">Clear All Answers</button>
+                            <p class="text-muted mt-2 small">Reset all selected answers to start over.</p>
+                        </div>
+                    </div>
+
                     <!-- Math Section -->
                     <div class="card mb-4" id="math-section">
                         <div class="card-header">
@@ -910,36 +918,8 @@
                             <div class="question mb-4" data-question="m33" data-correct="A">
                                 <p class="fw-bold">33. The following graph represents which equation?</p>
                                 <div class="mb-3" style="text-align: center;">
-                                    <svg width="200" height="200" viewBox="0 0 200 200"
-                                        style="border: 1px solid #ccc; background: #f9f9f9;">
-                                        <!-- Axes -->
-                                        <line x1="20" y1="180" x2="180" y2="180" stroke="#333" stroke-width="2"
-                                            marker-end="url(#arrowhead)" />
-                                        <line x1="20" y1="180" x2="20" y2="20" stroke="#333" stroke-width="2"
-                                            marker-end="url(#arrowhead)" />
-                                        <!-- Arrow markers -->
-                                        <defs>
-                                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3"
-                                                orient="auto">
-                                                <polygon points="0 0, 10 3, 0 6" fill="#333" />
-                                            </marker>
-                                        </defs>
-                                        <!-- Labels -->
-                                        <text x="185" y="185" fill="#333" font-size="12">x</text>
-                                        <text x="15" y="15" fill="#333" font-size="12">y</text>
-                                        <text x="15" y="185" fill="#333" font-size="10">0</text>
-                                        <!-- Line: y = -x + 4, showing x from 0 to 4, y from 0 to 4 -->
-                                        <!-- Points: (0,4), (1,3), (2,2), (3,1), (4,0) -->
-                                        <!-- SVG coords: x=0→20, x=4→180; y=0→180, y=4→20 -->
-                                        <polyline points="20,20 60,60 100,100 140,140 180,180" stroke="#0066cc"
-                                            stroke-width="2" fill="none" />
-                                        <!-- Points -->
-                                        <circle cx="20" cy="20" r="3" fill="#0066cc" />
-                                        <circle cx="60" cy="60" r="3" fill="#0066cc" />
-                                        <circle cx="100" cy="100" r="3" fill="#0066cc" />
-                                        <circle cx="140" cy="140" r="3" fill="#0066cc" />
-                                        <circle cx="180" cy="180" r="3" fill="#0066cc" />
-                                    </svg>
+                                    <img src="assets/images/exam1-graph33.png" alt="Graph for question 33"
+                                        style="max-width: 50%; margin-top: 10px;">
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m33" id="m33a" value="A">
@@ -2168,13 +2148,13 @@
                         </div>
                     </div>
 
-                    <!-- Navigation -->
-                    <div class="d-flex justify-content-between mb-4">
-                        <a href="index.html" class="btn btn-outline-secondary">Back to Home</a>
-                        <div>
-                            <a href="full-practice_2.html" class="btn btn-primary me-2">Exam 2</a>
-                            <a href="practice-math.html" class="btn btn-success me-2">Practice Math Only</a>
-                            <a href="practice-reading.html" class="btn btn-success">Practice Reading Only</a>
+
+
+                    <!-- Clear Answers Button (Bottom) -->
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <button id="clearAnswersBtnBottom" class="btn btn-danger btn-lg">Clear All Answers</button>
+                            <p class="text-muted mt-2 small">Reset all selected answers to start over.</p>
                         </div>
                     </div>
                 </div>
@@ -2197,6 +2177,67 @@
             </div>
         </div>
     </footer>
+
+    <!-- Donation Modal -->
+    <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="donationModalLabel">Congratulations!</h5>
+                    <button type="button" class="btn-close btn-close-lg" data-bs-dismiss="modal" aria-label="Close"
+                        style="font-size: 1.5rem; padding: 0.5rem;"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="lead mb-4">Congrats on finishing!</p>
+
+                    <!-- Overall Score -->
+                    <div class="mb-4">
+                        <h5 class="mb-2">Overall Score</h5>
+                        <div class="progress mb-2" style="height: 35px;">
+                            <div id="modalOverallBar" class="progress-bar" role="progressbar"
+                                style="width: 0%; font-size: 1.1rem; font-weight: bold; line-height: 35px;"
+                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                        <p class="mb-0"><span id="modalOverallScore">0</span> out of <span
+                                id="modalOverallTotal">0</span> correct</p>
+                    </div>
+
+                    <!-- Math Score -->
+                    <div class="mb-4">
+                        <h5 class="mb-2">Math Score</h5>
+                        <div class="progress mb-2" style="height: 35px;">
+                            <div id="modalMathBar" class="progress-bar" role="progressbar"
+                                style="width: 0%; font-size: 1.1rem; font-weight: bold; line-height: 35px;"
+                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                        <p class="mb-0"><span id="modalMathScore">0</span> out of <span id="modalMathTotal">0</span>
+                            correct</p>
+                    </div>
+
+                    <!-- Reading Score -->
+                    <div class="mb-4">
+                        <h5 class="mb-2">Reading Score</h5>
+                        <div class="progress mb-2" style="height: 35px;">
+                            <div id="modalReadingBar" class="progress-bar" role="progressbar"
+                                style="width: 0%; font-size: 1.1rem; font-weight: bold; line-height: 35px;"
+                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                        <p class="mb-0"><span id="modalReadingScore">0</span> out of <span
+                                id="modalReadingTotal">0</span> correct</p>
+                    </div>
+
+                    <p class="mb-4">Before you check out what you missed, consider donating to help keep this site free
+                        for others.</p>
+                    <div class="text-center mt-4">
+                        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+                            data-name="bmc-button" data-slug="electricalaptitudeprep" data-color="#FFDD00"
+                            data-emoji="☕" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000"
+                            data-font-color="#000000" data-coffee-color="#ffffff"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -2260,7 +2301,7 @@
             m31: "The statement 'y is 3 times x divided by x plus 5' means y equals 3x divided by (x + 5), which is written as y = 3x/(x + 5) or y = (3x)/(x + 5). This is a rational function where the denominator is x + 5.",
             m32: "Checking the table values: when x = -2, y = -1; when x = -1, y = 1; when x = 0, y = 3; when x = 1, y = 5; when x = 2, y = 7. The pattern shows y increases by 2 for each increase of 1 in x, and when x = 0, y = 3. This matches y = 2x + 3. Verifying: 2(-2) + 3 = -1, 2(-1) + 3 = 1, 2(0) + 3 = 3, 2(1) + 3 = 5, 2(2) + 3 = 7. All values match.",
             m33: "The graph shows a straight line passing through points (0, 4), (1, 3), (2, 2), (3, 1), and (4, 0). The line has a slope of -1 (decreases by 1 for each increase of 1 in x) and a y-intercept of 4. This matches the equation y = -x + 4.",
-            m34: "The equation y = x² - 4 means y equals x squared minus 4. In words, this is 'y is x squared minus 4'. The other options are incorrect: A would be y = x² - 4x, B would be y = (x² - 4)/x, and C would be y = 2x - 4.",
+            m34: "The equation y = x² - 4 means y equals x squared minus 4. The other options are incorrect: A would be y = x² - 4x, B would be y = (x² - 4)/x, and C would be y = 2x - 4.",
             // Passage 1: World War 1 (Questions 1-9)
             1: "The passage explicitly states that 'World War I, also known as the Great War, began in 1914 and lasted until 1918.'",
             2: "The passage states that 'The immediate cause of the war was the assassination of Archduke Franz Ferdinand of Austria-Hungary in Sarajevo on June 28, 1914.'",
@@ -2308,6 +2349,35 @@
             const resultsSection = document.getElementById('resultsSection');
             const scoreDisplay = document.getElementById('scoreDisplay');
             const missedQuestionsDiv = document.getElementById('missedQuestions');
+            const clearBtnTop = document.getElementById('clearAnswersBtnTop');
+            const clearBtnBottom = document.getElementById('clearAnswersBtnBottom');
+            const donationModalElement = document.getElementById('donationModal');
+            const donationModal = donationModalElement ? new bootstrap.Modal(donationModalElement) : null;
+
+            // Clear all answers function
+            function clearAllAnswers() {
+                const allRadioButtons = document.querySelectorAll('input[type="radio"]');
+                allRadioButtons.forEach(radio => {
+                    radio.checked = false;
+                });
+            }
+
+            // Clear button handlers
+            if (clearBtnTop) {
+                clearBtnTop.addEventListener('click', function () {
+                    if (confirm('Are you sure you want to clear all answers? This cannot be undone.')) {
+                        clearAllAnswers();
+                    }
+                });
+            }
+
+            if (clearBtnBottom) {
+                clearBtnBottom.addEventListener('click', function () {
+                    if (confirm('Are you sure you want to clear all answers? This cannot be undone.')) {
+                        clearAllAnswers();
+                    }
+                });
+            }
 
             if (!gradeBtn) {
                 console.error('Grade button not found');
@@ -2328,19 +2398,25 @@
                 const questions = document.querySelectorAll('.question[data-question]');
                 let correct = 0;
                 let total = questions.length;
+                let mathCorrect = 0;
+                let mathTotal = 0;
+                let readingCorrect = 0;
+                let readingTotal = 0;
                 const allQuestions = [];
 
                 questions.forEach(question => {
                     const questionNum = question.getAttribute('data-question');
                     const correctAnswer = question.getAttribute('data-correct');
+                    const isMathQuestion = questionNum.startsWith('m');
+
                     // Handle both reading questions (q1, q2, etc.) and math questions (m1, m2, etc.)
-                    const inputName = questionNum.startsWith('m') ? questionNum : `q${questionNum}`;
+                    const inputName = isMathQuestion ? questionNum : `q${questionNum}`;
                     const selectedRadio = question.querySelector(`input[name="${inputName}"]:checked`);
                     const questionElement = document.querySelector(`.question[data-question="${questionNum}"]`);
 
                     // Extract question text - handle math questions differently
                     let questionText = '';
-                    if (questionNum.startsWith('m')) {
+                    if (isMathQuestion) {
                         // For math questions, extract all content before the form-check divs
                         const questionContent = questionElement.cloneNode(true);
                         // Remove all form-check elements
@@ -2352,16 +2428,23 @@
                             questionHTML += p.outerHTML;
                         });
                         questionText = questionHTML || 'Question ' + questionNum;
+                        mathTotal++;
                     } else {
                         // For reading questions, just get the bold text
                         const questionTextElement = questionElement ? questionElement.querySelector('.fw-bold') : null;
                         questionText = questionTextElement ? questionTextElement.textContent : 'Question ' + questionNum;
+                        readingTotal++;
                     }
 
                     const isCorrect = selectedRadio && selectedRadio.value === correctAnswer;
 
                     if (isCorrect) {
                         correct++;
+                        if (isMathQuestion) {
+                            mathCorrect++;
+                        } else {
+                            readingCorrect++;
+                        }
                     }
 
                     // For sorting: math questions (m1, m2) get lower numbers (1, 2) so they appear first
@@ -2387,16 +2470,102 @@
                 // Sort all questions by sort number (math first, then reading)
                 allQuestions.sort((a, b) => a.sortNum - b.sortNum);
 
-                // Calculate percentage
-                const percentage = Math.round((correct / total) * 100);
+                // Calculate percentages
+                const overallPercentage = total > 0 ? Math.round((correct / total) * 100) : 0;
+                const mathPercentage = mathTotal > 0 ? Math.round((mathCorrect / mathTotal) * 100) : 0;
+                const readingPercentage = readingTotal > 0 ? Math.round((readingCorrect / readingTotal) * 100) : 0;
 
-                // Display score
+                // Debug logging
+                console.log('Score Calculation:', {
+                    overall: { correct, total, percentage: overallPercentage },
+                    math: { correct: mathCorrect, total: mathTotal, percentage: mathPercentage },
+                    reading: { correct: readingCorrect, total: readingTotal, percentage: readingPercentage }
+                });
+
+                // Helper function to get color class based on percentage
+                function getColorClass(percent) {
+                    if (percent > 70) {
+                        return 'bg-success';
+                    } else if (percent >= 40 && percent <= 60) {
+                        return 'bg-warning';
+                    } else {
+                        return 'bg-danger';
+                    }
+                }
+
+                // Helper function to update score bar
+                function updateScoreBar(barId, scoreId, totalId, correct, total, percentage) {
+                    const bar = document.getElementById(barId);
+                    const scoreEl = document.getElementById(scoreId);
+                    const totalEl = document.getElementById(totalId);
+
+                    console.log(`Updating ${barId}:`, { bar: !!bar, scoreEl: !!scoreEl, totalEl: !!totalEl, correct, total, percentage });
+
+                    if (bar) {
+                        bar.style.width = percentage + '%';
+                        bar.setAttribute('aria-valuenow', percentage);
+                        bar.textContent = percentage + '%';
+                        bar.className = 'progress-bar ' + getColorClass(percentage);
+                    } else {
+                        console.error(`Element not found: ${barId}`);
+                    }
+                    if (scoreEl) {
+                        scoreEl.textContent = correct;
+                    } else {
+                        console.error(`Element not found: ${scoreId}`);
+                    }
+                    if (totalEl) {
+                        totalEl.textContent = total;
+                    } else {
+                        console.error(`Element not found: ${totalId}`);
+                    }
+                }
+
+                // Update modal with all three scores BEFORE showing it
+                updateScoreBar('modalOverallBar', 'modalOverallScore', 'modalOverallTotal', correct, total, overallPercentage);
+                updateScoreBar('modalMathBar', 'modalMathScore', 'modalMathTotal', mathCorrect, mathTotal, mathPercentage);
+                updateScoreBar('modalReadingBar', 'modalReadingScore', 'modalReadingTotal', readingCorrect, readingTotal, readingPercentage);
+
+                // Show the modal after updating
+                if (donationModal) {
+                    donationModal.show();
+                }
+
+                // Display score breakdowns
                 scoreDisplay.innerHTML = `
-                    <h4>Your Score: ${correct} out of ${total} (${percentage}%)</h4>
-                    <div class="progress mb-3" style="height: 30px;">
-                        <div class="progress-bar ${percentage >= 80 ? 'bg-success' : percentage >= 60 ? 'bg-warning' : 'bg-danger'}" 
-                             role="progressbar" style="width: ${percentage}%" aria-valuenow="${percentage}" 
-                             aria-valuemin="0" aria-valuemax="100">${percentage}%</div>
+                    <h4 class="mb-4">Your Scores</h4>
+                    
+                    <!-- Overall Score -->
+                    <div class="mb-4">
+                        <h5 class="mb-2">Overall Score</h5>
+                        <div class="progress mb-2" style="height: 35px;">
+                            <div class="progress-bar ${getColorClass(overallPercentage)}" 
+                                 role="progressbar" style="width: ${overallPercentage}%" 
+                                 aria-valuenow="${overallPercentage}" aria-valuemin="0" aria-valuemax="100">${overallPercentage}%</div>
+                        </div>
+                        <p class="mb-0">${correct} out of ${total} correct</p>
+                    </div>
+
+                    <!-- Math Score -->
+                    <div class="mb-4">
+                        <h5 class="mb-2">Math Score</h5>
+                        <div class="progress mb-2" style="height: 35px;">
+                            <div class="progress-bar ${getColorClass(mathPercentage)}" 
+                                 role="progressbar" style="width: ${mathPercentage}%" 
+                                 aria-valuenow="${mathPercentage}" aria-valuemin="0" aria-valuemax="100">${mathPercentage}%</div>
+                        </div>
+                        <p class="mb-0">${mathCorrect} out of ${mathTotal} correct</p>
+                    </div>
+
+                    <!-- Reading Score -->
+                    <div class="mb-4">
+                        <h5 class="mb-2">Reading Score</h5>
+                        <div class="progress mb-2" style="height: 35px;">
+                            <div class="progress-bar ${getColorClass(readingPercentage)}" 
+                                 role="progressbar" style="width: ${readingPercentage}%" 
+                                 aria-valuenow="${readingPercentage}" aria-valuemin="0" aria-valuemax="100">${readingPercentage}%</div>
+                        </div>
+                        <p class="mb-0">${readingCorrect} out of ${readingTotal} correct</p>
                     </div>
                 `;
 
@@ -2413,7 +2582,7 @@
                         allQuestionsHTML += '<h5 class="mt-4 mb-3">Reading Section</h5>';
                         currentSection = 'reading';
                     }
-                    const questionLabel = item.num.startsWith('m') ? `Math Question ${item.num.substring(1)}` : `Question ${item.num}`;
+                    const questionLabel = item.num.startsWith('m') ? `Math Question ${item.num.substring(1)}` : `Reading Question ${item.num}`;
                     const isMathQuestion = item.num.startsWith('m');
                     const questionDisplay = isMathQuestion
                         ? `<div class="mb-3" style="text-align: center;">${item.questionText}</div>`
