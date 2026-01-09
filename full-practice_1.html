@@ -2198,8 +2198,10 @@
                                 style="width: 0%; font-size: 1.1rem; font-weight: bold; line-height: 35px;"
                                 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
                         </div>
-                        <p class="mb-0"><span id="modalOverallScore">0</span> out of <span
+                        <p class="mb-1"><span id="modalOverallScore">0</span> out of <span
                                 id="modalOverallTotal">0</span> correct</p>
+                        <p class="mb-0 small text-muted"><em>A score of 70% or higher indicates that you have a great
+                                chance of passing the test.</em></p>
                     </div>
 
                     <!-- Math Score -->
@@ -2482,7 +2484,7 @@
                     reading: { correct: readingCorrect, total: readingTotal, percentage: readingPercentage }
                 });
 
-                // Helper function to get color class based on percentage
+                // Helper function to get color class based on percentage (for math and reading)
                 function getColorClass(percent) {
                     if (percent > 70) {
                         return 'bg-success';
@@ -2493,8 +2495,19 @@
                     }
                 }
 
+                // Helper function to get color class for overall score (40-70 is yellow)
+                function getOverallColorClass(percent) {
+                    if (percent > 70) {
+                        return 'bg-success';
+                    } else if (percent >= 40 && percent <= 70) {
+                        return 'bg-warning';
+                    } else {
+                        return 'bg-danger';
+                    }
+                }
+
                 // Helper function to update score bar
-                function updateScoreBar(barId, scoreId, totalId, correct, total, percentage) {
+                function updateScoreBar(barId, scoreId, totalId, correct, total, percentage, colorClassFn = getColorClass) {
                     const bar = document.getElementById(barId);
                     const scoreEl = document.getElementById(scoreId);
                     const totalEl = document.getElementById(totalId);
@@ -2505,7 +2518,7 @@
                         bar.style.width = percentage + '%';
                         bar.setAttribute('aria-valuenow', percentage);
                         bar.textContent = percentage + '%';
-                        bar.className = 'progress-bar ' + getColorClass(percentage);
+                        bar.className = 'progress-bar ' + colorClassFn(percentage);
                     } else {
                         console.error(`Element not found: ${barId}`);
                     }
@@ -2522,7 +2535,7 @@
                 }
 
                 // Update modal with all three scores BEFORE showing it
-                updateScoreBar('modalOverallBar', 'modalOverallScore', 'modalOverallTotal', correct, total, overallPercentage);
+                updateScoreBar('modalOverallBar', 'modalOverallScore', 'modalOverallTotal', correct, total, overallPercentage, getOverallColorClass);
                 updateScoreBar('modalMathBar', 'modalMathScore', 'modalMathTotal', mathCorrect, mathTotal, mathPercentage);
                 updateScoreBar('modalReadingBar', 'modalReadingScore', 'modalReadingTotal', readingCorrect, readingTotal, readingPercentage);
 
@@ -2539,11 +2552,12 @@
                     <div class="mb-4">
                         <h5 class="mb-2">Overall Score</h5>
                         <div class="progress mb-2" style="height: 35px;">
-                            <div class="progress-bar ${getColorClass(overallPercentage)}" 
+                            <div class="progress-bar ${getOverallColorClass(overallPercentage)}" 
                                  role="progressbar" style="width: ${overallPercentage}%" 
                                  aria-valuenow="${overallPercentage}" aria-valuemin="0" aria-valuemax="100">${overallPercentage}%</div>
                         </div>
-                        <p class="mb-0">${correct} out of ${total} correct</p>
+                        <p class="mb-1">${correct} out of ${total} correct</p>
+                        <p class="mb-0 small text-muted"><em>A score of 70% or higher indicates that you have a great chance of passing the test.</em></p>
                     </div>
 
                     <!-- Math Score -->
