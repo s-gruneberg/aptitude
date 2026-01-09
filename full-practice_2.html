@@ -2530,12 +2530,13 @@
                         }
                     }
 
-                    // For sorting: convert math questions (m1, m2) to numbers (1001, 1002) so they appear after reading questions
+                    // For sorting: math questions (m1, m2) get lower numbers (1, 2) so they appear first
+                    // Reading questions (1, 2, etc.) get higher numbers (1000+) so they appear after
                     let sortNum;
                     if (questionNum.startsWith('m')) {
-                        sortNum = 1000 + parseInt(questionNum.substring(1));
+                        sortNum = parseInt(questionNum.substring(1));
                     } else {
-                        sortNum = parseInt(questionNum);
+                        sortNum = 1000 + parseInt(questionNum);
                     }
 
                     allQuestions.push({
@@ -2664,10 +2665,19 @@
                     </div>
                 `;
 
-                // Display all questions in order
+                // Display all questions in order (math first, then reading)
                 let allQuestionsHTML = '<h5 class="mb-3">All Questions:</h5>';
+                let currentSection = null;
 
                 allQuestions.forEach(item => {
+                    // Add section header when transitioning from math to reading
+                    if (item.num.startsWith('m') && currentSection !== 'math') {
+                        allQuestionsHTML += '<h5 class="mt-4 mb-3">Math Section</h5>';
+                        currentSection = 'math';
+                    } else if (!item.num.startsWith('m') && currentSection !== 'reading') {
+                        allQuestionsHTML += '<h5 class="mt-4 mb-3">Reading Section</h5>';
+                        currentSection = 'reading';
+                    }
                     const questionLabel = item.num.startsWith('m') ? `Math Question ${item.num.substring(1)}` : `Reading Question ${item.num}`;
                     const isMathQuestion = item.num.startsWith('m');
                     const questionDisplay = isMathQuestion
