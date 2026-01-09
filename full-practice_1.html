@@ -505,11 +505,7 @@
                                     <label class="form-check-label" for="m17c">C. As \(a\) increases, \(b\)
                                         decreases</label>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="m17" id="m17d" value="D">
-                                    <label class="form-check-label" for="m17d">D. As \(a\) decreases, \(b\)
-                                        decreases</label>
-                                </div>
+
                             </div>
 
                             <!-- Question 18: Variable relationship -->
@@ -517,7 +513,7 @@
                                 <p class="fw-bold">18. Given the formula</p>
                                 <p class="mb-2" style="font-size: 1.5em; text-align: center;">\[p = \frac{m \cdot n}{m +
                                     k}\]</p>
-                                <p class="mb-2">where \(k\) is held constant, as \(m\) increases, what happens to \(p\)?
+                                <p class="mb-2">where \(k\) is held constant, as \(m\) changes, what happens to \(p\)?
                                 </p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m18" id="m18a" value="A">
@@ -532,11 +528,6 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m18" id="m18c" value="C">
                                     <label class="form-check-label" for="m18c">C. As \(m\) increases, \(p\)
-                                        decreases</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="m18" id="m18d" value="D">
-                                    <label class="form-check-label" for="m18d">D. As \(m\) decreases, \(p\)
                                         decreases</label>
                                 </div>
                             </div>
@@ -596,7 +587,7 @@
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m20" id="m20d" value="D">
-                                    <label class="form-check-label" for="m20d">D. If \(n\) is less than 5, then \(m\) is
+                                    <label class="form-check-label" for="m20d">D. If \(n\) is less than 3, then \(m\) is
                                         negative</label>
                                 </div>
                             </div>
@@ -2244,23 +2235,27 @@
             m14: "Substitute \\(n = 7\\), \\(p = 2\\), and \\(q = 2\\) into \\(m = \\frac{6n}{2p+q}\\): \\(m = \\frac{6(7)}{2(2)+2} = \\frac{42}{4+2} = \\frac{42}{6} = 7\\).",
             m15: "Substitute \\(j = 4\\) and \\(k = 2\\) into \\(i = \\frac{3j-6}{2j+k}\\): \\(i = \\frac{3(4)-6}{2(4)+2} = \\frac{12-6}{8+2} = \\frac{6}{10} = 0.6\\).",
             // Math Section: Variable Relationships (Questions m16-m19)
-            m16: "We rewrite the expression as \\(y = \\frac{z - x}{z} + 5 = 1 - \\frac{x}{z} + 5 = 6 - \\frac{x}{z}\\). Since \\(x\\) is held constant, as \\(z\\) increases the fraction \\(\\frac{x}{z}\\) decreases. Subtracting a smaller number means \\(y\\) increases. Therefore, as \\(z\\) increases, \\(y\\) increases, so statement A is true.",
-            m17: "Since c is constant, (c+2)/√c is a constant factor. The formula becomes b = constant × (a-3). As a increases, (a-3) increases, so b increases proportionally. Answer: As a increases, b increases.",
-            m18: "Rewriting: p = (m·n)/(m+k) = n·m/(m+k). Since n and k are constant, as m increases, the ratio m/(m+k) increases (approaching 1 as m gets very large). Therefore p increases. Answer: As m increases, p increases.",
-            m19: "Since w is constant, as v increases, the numerator √v increases (but at a slower rate than linear), while the denominator v + w increases linearly. Since the denominator grows faster than the numerator, the ratio decreases. Answer: As v increases, u decreases.",
+            m16: "Start with \\(y = \\frac{z - x}{z} + 5\\) and pick \\(x = 10\\) to make it concrete: \\(y = \\frac{z - 10}{z} + 5\\). Using the algebra rule \\(\\frac{a - b}{c} = \\frac{a}{c} - \\frac{b}{c}\\), split the fraction: \\(\\frac{z - 10}{z} = \\frac{z}{z} - \\frac{10}{z}\\). So \\(y = \\frac{z}{z} - \\frac{10}{z} + 5\\). Simplify \\(\\frac{z}{z} = 1\\) to get \\(y = 1 - \\frac{10}{z} + 5\\). Combine like terms \\(1 + 5 = 6\\) to obtain \\(y = 6 - \\frac{10}{z}\\). As \\(z\\) increases, \\(\\frac{10}{z}\\) decreases, so subtracting a smaller number from 6 makes \\(y\\) increase. Therefore, as \\(z\\) increases, \\(y\\) increases. Statement A is true. Here is a 3D graph of the problem with x set to 10: <br><img src=\"assets/images/exam1-graph16.png\" alt=\"Graph for question 16\" style=\"max-width: 50%; margin-top: 10px;\">",
+            m17: "Let \\(c = 10\\). The equation becomes \\(b = \\frac{12}{\\sqrt{10}}(a - 3)\\). Since \\(\\frac{12}{\\sqrt{10}}\\) is a positive constant, \\(b\\) increases whenever \\(a - 3\\) increases. Therefore, as \\(a\\) increases, \\(b\\) increases.",
+            m18: "Let \\(n = 10\\) and \\(k = 10\\). The equation becomes \\(p = 10 \\cdot \\frac{m}{m + 10}\\). As \\(m\\) increases, the fraction \\(\\frac{m}{m + 10}\\) increases. Therefore, \\(p\\) increases as \\(m\\) increases.",
+            m19: "Let \\(w = 10\\). The equation becomes \\(u = \\frac{\\sqrt{v}}{v + 10}\\). As \\(v\\) increases, the numerator \\(\\sqrt{v}\\) increases slowly while the denominator \\(v + 10\\) increases faster. Because the denominator grows faster, the value of the fraction decreases. Therefore, as \\(v\\) increases, \\(u\\) decreases.",
+
+
+
             // Math Section: 2D Graphing and Inequalities (Questions m20-m24)
-            m20: "Rewriting: n = 3m + 2. If n > 2, then 3m + 2 > 2, so 3m > 0, which means m > 0. Therefore, if n is greater than 2, then m is positive. (Note: If m < 3, n could be negative if m < -2/3. If m < 0, n could be negative if m < -2/3. If n < 5, then m < 1, but m is not necessarily negative.)",
-            m21: "Rewriting: y = 2x - 5. If x > 2.5, then y = 2x - 5 > 2(2.5) - 5 = 5 - 5 = 0. Therefore, if x is greater than 2.5, then y is positive. (Note: If x < 3, y < 1 but not necessarily negative. If y > 1, then x > 3, not negative. If y < -3, then x < 1, not necessarily positive.)",
-            m22: "Rewriting: q = 4p + 8. If p < -4, then q = 4p + 8 < 4(-4) + 8 = -16 + 8 = -8. Therefore, if p is less than -4, then q is less than -8. (Note: If p > 1, then q > 12, so q is positive, but this is not the only true statement. If q > 0, then p > -2, not necessarily negative. If q < 4, then p < -1, so p is negative, but this is not always true.)",
-            m23: "Rewriting: b = 5a - 10. If b < -10, then 5a - 10 < -10, so 5a < 0, which means a < 0. Therefore, if b is less than -10, then a is negative. (Note: If a < 1, then b < -5, but b could still be negative. If a > 3, then b > 5, so b is positive, not negative. If b > 5, then a > 3, so a is positive, not negative.)",
-            m24: "Rewriting: d = 3c + 6. If c > 2, then d = 3c + 6 > 3(2) + 6 = 12, so d > 12 > 0. Therefore, if c is greater than 2, then d is greater than 0. (Note: If c < 1, then d < 9, but d could still be positive. If d > 3, then c > -1, not necessarily negative. If d < 0, then c < -2, so c is negative, not positive.)",
+            m20: "Graphing the problem, we can manually check every answer on the graph and see that C is the only correct one. <br><img src=\"assets/images/exam1-graph20.png\" alt=\"Graph for question 20\" style=\"max-width: 50%; margin-top: 10px;\">",
+            m21: "This can be solved by graphing, alternatively we rewrite the equation as \\(y = 2x - 5\\). If \\(x > 2.5\\), then \\(y = 2x - 5 > 2(2.5) - 5 = 0\\), so \\(y\\) is positive. Therefore, if \\(x\\) is greater than 2.5, then \\(y\\) is positive. Statement A is correct. <br><img src=\"assets/images/exam1-graph21.png\" alt=\"Graph for question 21\" style=\"max-width: 50%; margin-top: 10px;\">",
+            m22: "This can be solved by graphing or rewriting the equation as \\(q = 4p + 8\\). If \\(p < -4\\), then \\(4p < -16\\), so \\(q = 4p + 8 < -8\\). Therefore, if \\(p\\) is less than -4, then \\(q\\) is less than -8. Statement B is correct. <br><img src=\"assets/images/exam1-graph22.png\" alt=\"Graph for question 22\" style=\"max-width: 50%; margin-top: 10px;\">",
+            m23: "Graph or rewrite the equation as \\(b = 5a - 10\\). If \\(b < -10\\), then \\(5a - 10 < -10\\), which gives \\(5a < 0\\) and therefore \\(a < 0\\). So if \\(b\\) is less than -10, then \\(a\\) is negative. Statement D is correct.",
+            m24: "Graph or rewrite the equation as \\(d = 3c + 6\\). If \\(c > 2\\), then \\(3c > 6\\), so \\(d = 3c + 6 > 12\\), which is greater than 0. Therefore, if \\(c\\) is greater than 2, then \\(d\\) is greater than 0. Statement A is correct.",
             // Math Section: Factoring (Questions m25-m30)
-            m25: "Using FOIL: (3g - 4n)(g + n) = 3g(g) + 3g(n) - 4n(g) - 4n(n) = 3g² + 3gn - 4gn - 4n² = 3g² - gn - 4n².",
-            m26: "Using FOIL: (2u - 5v)(u + 3v) = 2u(u) + 2u(3v) - 5v(u) - 5v(3v) = 2u² + 6uv - 5uv - 15v² = 2u² + uv - 15v².",
-            m27: "Using FOIL: (4w - 3x)(2w - x) = 4w(2w) + 4w(-x) - 3x(2w) - 3x(-x) = 8w² - 4wx - 6wx + 3x² = 8w² - 10wx + 3x².",
-            m28: "Using FOIL: (5y - 2z)(y - 4z) = 5y(y) + 5y(-4z) - 2z(y) - 2z(-4z) = 5y² - 20yz - 2yz + 8z² = 5y² - 22yz + 8z².",
-            m29: "Using FOIL: (6a - b)(2a + 5b) = 6a(2a) + 6a(5b) - b(2a) - b(5b) = 12a² + 30ab - 2ab - 5b² = 12a² + 28ab - 5b².",
-            m30: "To factor 4p² - 9pq - 9q², we need two binomials whose product gives this. Testing (4p + 3q)(p - 3q) = 4p(p) + 4p(-3q) + 3q(p) + 3q(-3q) = 4p² - 12pq + 3pq - 9q² = 4p² - 9pq - 9q². This matches, so the factored form is (4p + 3q)(p - 3q).",
+            m25: "Using FOIL: \\((3g - 4n)(g + n)\\). First terms: \\(3g \\cdot g = 3g^2\\). Outer terms: \\(3g \\cdot n = 3gn\\). Inner terms: \\(-4n \\cdot g = -4gn\\). Last terms: \\(-4n \\cdot n = -4n^2\\). Combining like terms gives \\(3g^2 - gn - 4n^2\\).",
+            m26: "Using FOIL: \\((2u - 5v)(u + 3v)\\). First terms: \\(2u \\cdot u = 2u^2\\). Outer terms: \\(2u \\cdot 3v = 6uv\\). Inner terms: \\(-5v \\cdot u = -5uv\\). Last terms: \\(-5v \\cdot 3v = -15v^2\\). Combining like terms gives \\(2u^2 + uv - 15v^2\\).",
+            m27: "Using FOIL: \\((4w - 3x)(2w - x)\\). First terms: \\(4w \\cdot 2w = 8w^2\\). Outer terms: \\(4w \\cdot (-x) = -4wx\\). Inner terms: \\(-3x \\cdot 2w = -6wx\\). Last terms: \\(-3x \\cdot (-x) = 3x^2\\). Combining like terms gives \\(8w^2 - 10wx + 3x^2\\).",
+            m28: "Using FOIL: \\((5y - 2z)(y - 4z)\\). First terms: \\(5y \\cdot y = 5y^2\\). Outer terms: \\(5y \\cdot (-4z) = -20yz\\). Inner terms: \\(-2z \\cdot y = -2yz\\). Last terms: \\(-2z \\cdot (-4z) = 8z^2\\). Combining like terms gives \\(5y^2 - 22yz + 8z^2\\).",
+            m29: "Using FOIL: \\((6a - b)(2a + 5b)\\). First terms: \\(6a \\cdot 2a = 12a^2\\). Outer terms: \\(6a \\cdot 5b = 30ab\\). Inner terms: \\(-b \\cdot 2a = -2ab\\). Last terms: \\(-b \\cdot 5b = -5b^2\\). Combining like terms gives \\(12a^2 + 28ab - 5b^2\\).",
+            m30: "To factor \\(4p^2 - 9pq - 9q^2\\), we look for two binomials whose product equals the expression. Expanding \\((4p + 3q)(p - 3q)\\) gives \\(4p^2 - 12pq + 3pq - 9q^2 = 4p^2 - 9pq - 9q^2\\). Since this matches, the factored form is \\((4p + 3q)(p - 3q)\\).",
+
             // Math Section: Multiple Representations (Questions m31-m34)
             m31: "The statement 'y is 3 times x divided by x plus 5' means y equals 3x divided by (x + 5), which is written as y = 3x/(x + 5) or y = (3x)/(x + 5). This is a rational function where the denominator is x + 5.",
             m32: "Checking the table values: when x = -2, y = -1; when x = -1, y = 1; when x = 0, y = 3; when x = 1, y = 5; when x = 2, y = 7. The pattern shows y increases by 2 for each increase of 1 in x, and when x = 0, y = 3. This matches y = 2x + 3. Verifying: 2(-2) + 3 = -1, 2(-1) + 3 = 1, 2(0) + 3 = 3, 2(1) + 3 = 5, 2(2) + 3 = 7. All values match.",
@@ -2314,8 +2309,19 @@
             const scoreDisplay = document.getElementById('scoreDisplay');
             const missedQuestionsDiv = document.getElementById('missedQuestions');
 
-            gradeBtn.addEventListener('click', function () {
-                gradeReadingSection();
+            if (!gradeBtn) {
+                console.error('Grade button not found');
+                return;
+            }
+
+            gradeBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                try {
+                    gradeReadingSection();
+                } catch (error) {
+                    console.error('Error grading exam:', error);
+                    alert('An error occurred while grading the exam. Please check the console for details.');
+                }
             });
 
             function gradeReadingSection() {
@@ -2331,19 +2337,40 @@
                     const inputName = questionNum.startsWith('m') ? questionNum : `q${questionNum}`;
                     const selectedRadio = question.querySelector(`input[name="${inputName}"]:checked`);
                     const questionElement = document.querySelector(`.question[data-question="${questionNum}"]`);
-                    const questionText = questionElement.querySelector('.fw-bold').textContent;
+
+                    // Extract question text - handle math questions differently
+                    let questionText = '';
+                    if (questionNum.startsWith('m')) {
+                        // For math questions, extract all content before the form-check divs
+                        const questionContent = questionElement.cloneNode(true);
+                        // Remove all form-check elements
+                        questionContent.querySelectorAll('.form-check').forEach(el => el.remove());
+                        // Get all paragraph elements
+                        const paragraphs = questionContent.querySelectorAll('p');
+                        let questionHTML = '';
+                        paragraphs.forEach(p => {
+                            questionHTML += p.outerHTML;
+                        });
+                        questionText = questionHTML || 'Question ' + questionNum;
+                    } else {
+                        // For reading questions, just get the bold text
+                        const questionTextElement = questionElement ? questionElement.querySelector('.fw-bold') : null;
+                        questionText = questionTextElement ? questionTextElement.textContent : 'Question ' + questionNum;
+                    }
+
                     const isCorrect = selectedRadio && selectedRadio.value === correctAnswer;
 
                     if (isCorrect) {
                         correct++;
                     }
 
-                    // For sorting: convert math questions (m1, m2) to numbers (1001, 1002) so they appear after reading questions
+                    // For sorting: math questions (m1, m2) get lower numbers (1, 2) so they appear first
+                    // Reading questions (1, 2, etc.) get higher numbers (1000+) so they appear after
                     let sortNum;
                     if (questionNum.startsWith('m')) {
-                        sortNum = 1000 + parseInt(questionNum.substring(1));
+                        sortNum = parseInt(questionNum.substring(1));
                     } else {
-                        sortNum = parseInt(questionNum);
+                        sortNum = 1000 + parseInt(questionNum);
                     }
 
                     allQuestions.push({
@@ -2351,13 +2378,13 @@
                         sortNum: sortNum,
                         correct: correctAnswer,
                         selected: selectedRadio ? selectedRadio.value : 'No answer selected',
-                        explanation: answerExplanations[questionNum],
+                        explanation: answerExplanations[questionNum] || 'No explanation available',
                         questionText: questionText,
                         isCorrect: isCorrect
                     });
                 });
 
-                // Sort all questions by sort number
+                // Sort all questions by sort number (math first, then reading)
                 allQuestions.sort((a, b) => a.sortNum - b.sortNum);
 
                 // Calculate percentage
@@ -2373,11 +2400,25 @@
                     </div>
                 `;
 
-                // Display all questions in order
+                // Display all questions in order (math first, then reading)
                 let allQuestionsHTML = '<h5 class="mb-3">All Questions:</h5>';
+                let currentSection = null;
 
                 allQuestions.forEach(item => {
+                    // Add section header when transitioning from math to reading
+                    if (item.num.startsWith('m') && currentSection !== 'math') {
+                        allQuestionsHTML += '<h5 class="mt-4 mb-3">Math Section</h5>';
+                        currentSection = 'math';
+                    } else if (!item.num.startsWith('m') && currentSection !== 'reading') {
+                        allQuestionsHTML += '<h5 class="mt-4 mb-3">Reading Section</h5>';
+                        currentSection = 'reading';
+                    }
                     const questionLabel = item.num.startsWith('m') ? `Math Question ${item.num.substring(1)}` : `Question ${item.num}`;
+                    const isMathQuestion = item.num.startsWith('m');
+                    const questionDisplay = isMathQuestion
+                        ? `<div class="mb-3" style="text-align: center;">${item.questionText}</div>`
+                        : `<p class="mb-2"><strong>Question:</strong> ${item.questionText}</p>`;
+
                     if (item.isCorrect) {
                         // Green box for correct answers
                         allQuestionsHTML += `
@@ -2386,7 +2427,7 @@
                                     <strong>${questionLabel}</strong>
                                 </div>
                                 <div class="card-body">
-                                    <p class="mb-2"><strong>Question:</strong> ${item.questionText}</p>
+                                    ${questionDisplay}
                                     <p class="mb-2 text-success"><strong>Your Answer:</strong> ${item.selected} ✓</p>
                                     <p class="mb-0"><strong>Explanation:</strong> ${item.explanation}</p>
                                 </div>
@@ -2400,7 +2441,7 @@
                                     <strong>${questionLabel}</strong>
                                 </div>
                                 <div class="card-body">
-                                    <p class="mb-2"><strong>Question:</strong> ${item.questionText}</p>
+                                    ${questionDisplay}
                                     <p class="mb-1 text-danger"><strong>Your Answer:</strong> ${item.selected}</p>
                                     <p class="mb-2 text-success"><strong>Correct Answer:</strong> ${item.correct}</p>
                                     <p class="mb-0"><strong>Explanation:</strong> ${item.explanation}</p>
@@ -2414,6 +2455,13 @@
 
                 // Show results section
                 resultsSection.style.display = 'block';
+
+                // Re-render MathJax for the explanations
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    MathJax.typesetPromise([missedQuestionsDiv]).catch(function (err) {
+                        console.error('MathJax rendering error:', err);
+                    });
+                }
 
                 // Scroll to results
                 resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });

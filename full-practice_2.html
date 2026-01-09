@@ -2362,8 +2362,19 @@
             const scoreDisplay = document.getElementById('scoreDisplay');
             const missedQuestionsDiv = document.getElementById('missedQuestions');
 
-            gradeBtn.addEventListener('click', function () {
-                gradeReadingSection();
+            if (!gradeBtn) {
+                console.error('Grade button not found');
+                return;
+            }
+
+            gradeBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                try {
+                    gradeReadingSection();
+                } catch (error) {
+                    console.error('Error grading exam:', error);
+                    alert('An error occurred while grading the exam. Please check the console for details.');
+                }
             });
 
             function gradeReadingSection() {
@@ -2379,7 +2390,27 @@
                     const inputName = questionNum.startsWith('m') ? questionNum : `q${questionNum}`;
                     const selectedRadio = question.querySelector(`input[name="${inputName}"]:checked`);
                     const questionElement = document.querySelector(`.question[data-question="${questionNum}"]`);
-                    const questionText = questionElement.querySelector('.fw-bold').textContent;
+
+                    // Extract question text - handle math questions differently
+                    let questionText = '';
+                    if (questionNum.startsWith('m')) {
+                        // For math questions, extract all content before the form-check divs
+                        const questionContent = questionElement.cloneNode(true);
+                        // Remove all form-check elements
+                        questionContent.querySelectorAll('.form-check').forEach(el => el.remove());
+                        // Get all paragraph elements
+                        const paragraphs = questionContent.querySelectorAll('p');
+                        let questionHTML = '';
+                        paragraphs.forEach(p => {
+                            questionHTML += p.outerHTML;
+                        });
+                        questionText = questionHTML || 'Question ' + questionNum;
+                    } else {
+                        // For reading questions, just get the bold text
+                        const questionTextElement = questionElement ? questionElement.querySelector('.fw-bold') : null;
+                        questionText = questionTextElement ? questionTextElement.textContent : 'Question ' + questionNum;
+                    }
+
                     const isCorrect = selectedRadio && selectedRadio.value === correctAnswer;
 
                     if (isCorrect) {
@@ -2399,7 +2430,7 @@
                         sortNum: sortNum,
                         correct: correctAnswer,
                         selected: selectedRadio ? selectedRadio.value : 'No answer selected',
-                        explanation: answerExplanations[questionNum],
+                        explanation: answerExplanations[questionNum] || 'No explanation available',
                         questionText: questionText,
                         isCorrect: isCorrect
                     });
@@ -2426,6 +2457,11 @@
 
                 allQuestions.forEach(item => {
                     const questionLabel = item.num.startsWith('m') ? `Math Question ${item.num.substring(1)}` : `Question ${item.num}`;
+                    const isMathQuestion = item.num.startsWith('m');
+                    const questionDisplay = isMathQuestion
+                        ? `<div class="mb-3" style="text-align: center;">${item.questionText}</div>`
+                        : `<p class="mb-2"><strong>Question:</strong> ${item.questionText}</p>`;
+
                     if (item.isCorrect) {
                         // Green box for correct answers
                         allQuestionsHTML += `
@@ -2434,7 +2470,7 @@
                                     <strong>${questionLabel}</strong>
                                 </div>
                                 <div class="card-body">
-                                    <p class="mb-2"><strong>Question:</strong> ${item.questionText}</p>
+                                    ${questionDisplay}
                                     <p class="mb-2 text-success"><strong>Your Answer:</strong> ${item.selected} ✓</p>
                                     <p class="mb-0"><strong>Explanation:</strong> ${item.explanation}</p>
                                 </div>
@@ -2448,7 +2484,7 @@
                                     <strong>${questionLabel}</strong>
                                 </div>
                                 <div class="card-body">
-                                    <p class="mb-2"><strong>Question:</strong> ${item.questionText}</p>
+                                    ${questionDisplay}
                                     <p class="mb-1 text-danger"><strong>Your Answer:</strong> ${item.selected}</p>
                                     <p class="mb-2 text-success"><strong>Correct Answer:</strong> ${item.correct}</p>
                                     <p class="mb-0"><strong>Explanation:</strong> ${item.explanation}</p>
@@ -2462,6 +2498,13 @@
 
                 // Show results section
                 resultsSection.style.display = 'block';
+
+                // Re-render MathJax for the explanations
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    MathJax.typesetPromise([missedQuestionsDiv]).catch(function (err) {
+                        console.error('MathJax rendering error:', err);
+                    });
+                }
 
                 // Scroll to results
                 resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
