@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - IBEW Aptitude Test Practice</title>
+    <title>About - Electrical Aptitude Test Practice</title>
     <meta name="description"
-        content="About the IBEW Aptitude Test Practice site, FAQ, and how to support this free educational resource.">
+        content="About the Electrical Aptitude Test Practice site, FAQ, and how to support this free educational resource.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon_32.png">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,16 +21,17 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="index.html">IBEW Aptitude Test Practice</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/icon_32.png" alt="Electrical Aptitude Test Prep" height="32" width="32"
+                    class="me-2">
+                Electrical Aptitude Test Prep
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="full-practice_1.html">Exam 1</a>
                     </li>
@@ -41,13 +45,16 @@
                         <a class="nav-link" href="practice-reading.html">Reading Practice</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="explanations-math.html">Math Strategies</a>
+                        <a class="nav-link" href="explanations-math.html"> Math Help</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="explanations-reading.html">Reading Strategies</a>
+                        <a class="nav-link" href="explanations-reading.html">Reading Tips</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="donate.html">Donate</a>
                     </li>
                 </ul>
             </div>
@@ -60,23 +67,63 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h1 class="mb-4">About This Site</h1>
-                    <p class="lead">A free educational resource to help you prepare for an electricalapprenticeship
-                        aptitude
-                        test.</p>
+
 
                     <!-- About Section -->
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h5 class="mb-0">Our Mission</h5>
+                            <h5 class="mb-0">The Mission</h5>
                         </div>
                         <div class="card-body">
                             <p>This website was created to provide free, accessible practice resources for individuals
                                 preparing for an electrical apprenticeship
-                                aptitude test. We believe that everyone should have access to quality test preparation
+                                aptitude test. I believe that everyone should have access to quality test preparation
                                 materials without financial barriers.</p>
-                            <p>Our goal is to help you feel confident and prepared when you take the actual test by
-                                providing practice questions, and study strategies.
+                            <p>My goal is to help you feel confident and prepared when you take the actual test by
+                                providing practice questions and study strategies.
                             </p>
+                        </div>
+                    </div>
+
+                    <!-- Why I Created This Site Section -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Why I created this site</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>I dropped out of high school and worked as a CW / helper electrician for a few years. I
+                                moved on in my career to more carpentry / handyman type stuff, and eventually I went to
+                                college for math. Well, the white collar job market in 2025 ain't what it used to be, so
+                                I ended
+                                up looking for work in the trades again.</p>
+                            <p>I took an aptitude test for an electrical apprenticeship and didn't study because all of
+                                the materials I could find were paywalled. I managed to pass mine, but I don't want
+                                anyone to have a financial barrier to passing their test, so I made this site with my
+                                free time.
+                            </p>
+                            <p>If you find this site helpful, please consider supporting it by buying me a coffee or
+                                donating to the site. I'm not trying to make a profit, I just want to help people. </p>
+                        </div>
+                    </div>
+                    <!-- Donation Section -->
+                    <div class="card mb-4" id="donate">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Support This Site</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>This site is completely free and it costs a little bit of money to keep it that way. If
+                                you find it helpful and
+                                would like to support its maintenance and development, you can make a donation.</p>
+                            <p><strong>It only takes a minute!</strong></p>
+
+                            <div class="text-center mt-4">
+                                <script type="text/javascript"
+                                    src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button"
+                                    data-slug="electricalaptitudeprep" data-color="#FFDD00" data-emoji="☕"
+                                    data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000"
+                                    data-font-color="#000000" data-coffee-color="#ffffff"></script>
+                            </div>
+
                         </div>
                     </div>
 
@@ -87,18 +134,21 @@
                         </div>
                         <div class="card-body">
                             <h6 class="mt-3">Is this site affiliated with IBEW?</h6>
-                            <p>No, this is an independent educational resource. We are not affiliated with, endorsed by,
+                            <p>No, this is an independent educational resource. This site is not affiliated with,
+                                endorsed by,
                                 or connected to the International Brotherhood of Electrical Workers or any official
                                 testing organization.</p>
 
                             <h6 class="mt-4">Is this site really free?</h6>
                             <p>Yes! All practice materials and resources on this site are completely free to use. There
-                                are no hidden fees, subscriptions, or paywalls.</p>
+                                are no hidden fees, subscriptions, or paywalls. <strong> Donations are not required, but
+                                    are greatly appreciated.</strong></p>
 
                             <h6 class="mt-4">What does a typical electrical apprenticeship aptitude test cover?</h6>
                             <p>The aptitude test typically includes two main sections: mathematics (algebra,
                                 functions, number series) and reading comprehension. Our practice materials are designed
-                                to help you prepare for these areas. Some tests cover additional tpoics</p>
+                                to help you prepare for these areas. Some tests cover additional topics such as
+                                mechanical aptitude and spatial reasoning.</p>
 
                             <h6 class="mt-4">How should I use this site to prepare?</h6>
                             <p>We recommend starting with a full practice exam and mimicking the test environment. To do
@@ -106,7 +156,8 @@
                                 portion.
                                 Take a 10 minute break between the two sections.
                                 After completing the full practice exam, review the explanations and study the
-                                strategies.
+                                strategies on the <a href="explanations-math.html">Math Help</a> and <a
+                                    href="explanations-reading.html">Reading Tips</a> pages.
                                 Then, practice the math and reading sections separately.
                                 Finally, take the additional full practice exam to see your progress.
 
@@ -118,29 +169,7 @@
                         </div>
                     </div>
 
-                    <!-- Donation Section -->
-                    <div class="card mb-4" id="donate">
-                        <div class="card-header bg-success text-white">
-                            <h5 class="mb-0">Support This Site</h5>
-                        </div>
-                        <div class="card-body">
-                            <p>This site is completely free and will always remain free. If you find it helpful and
-                                would like to support its maintenance and development, you can make a donation.</p>
-                            <p>Your support helps cover hosting costs and allows us to continue adding new practice
-                                questions and improving the site.</p>
 
-                            <div class="text-center mt-4">
-                                <button class="btn btn-success btn-lg" disabled>
-                                    ☕ Buy Me a Coffee / Donate
-                                </button>
-                                <p class="text-muted mt-3 small"><em>Donation functionality will be implemented in
-                                        future updates.</em></p>
-                            </div>
-
-                            <p class="mt-4 small text-muted">Thank you for considering supporting this free educational
-                                resource!</p>
-                        </div>
-                    </div>
 
                     <!-- Contact/Feedback -->
                     <div class="card mb-4">
@@ -148,22 +177,14 @@
                             <h5 class="mb-0">Feedback</h5>
                         </div>
                         <div class="card-body">
-                            <p>We're always looking to improve this site. If you have suggestions, find errors, or want
-                                to report issues, please note that contact functionality will be added in future
-                                updates.</p>
-                            <p class="text-muted small"><em>Feedback form will be implemented in future updates.</em>
-                            </p>
+                            <p>If you have suggestions, find errors, or want to let me know how much this site helped
+                                you out (seriuosly I love hearing this), please contact me on
+                                the <a href="contact.html">Contact page</a>.</p>
+
                         </div>
                     </div>
 
-                    <!-- Navigation -->
-                    <div class="d-flex justify-content-between mb-4">
-                        <a href="index.html" class="btn btn-outline-secondary">Back to Home</a>
-                        <div>
-                            <a href="full-practice_1.html" class="btn btn-primary me-2">Exam 1</a>
-                            <a href="full-practice_2.html" class="btn btn-primary">Exam 2</a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -174,11 +195,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2024 IBEW Aptitude Test Practice. Free educational resource.</p>
+                    <p class="mb-0">&copy; 2025 Electrical Aptitude Test Prep. Free educational resource</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="about.html" class="text-decoration-none me-3">About</a>
-                    <a href="about.html#donate" class="text-decoration-none">Support This Site</a>
+                    <a href="contact.html" class="text-decoration-none me-3">Contact</a>
+                    <a href="donate.html" class="text-decoration-none">Donate</a>
                 </div>
             </div>
         </div>
