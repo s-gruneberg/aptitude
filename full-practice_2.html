@@ -497,7 +497,7 @@
                                 <p class="fw-bold">17. Given the formula</p>
                                 <p class="mb-2" style="font-size: 1.5em; text-align: center;">\[r = \frac{(s - 4)(t +
                                     5)}{\sqrt{t}}\]</p>
-                                <p class="mb-2">where \(t\) is held constant, as \(s\) increases, what happens to \(r\)?
+                                <p class="mb-2">where \(t\) is held constant, as \(s\) changes, what happens to \(r\)?
                                 </p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m17" id="m17a" value="A">
@@ -514,11 +514,7 @@
                                     <label class="form-check-label" for="m17c">C. As \(s\) increases, \(r\)
                                         decreases</label>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="m17" id="m17d" value="D">
-                                    <label class="form-check-label" for="m17d">D. As \(s\) decreases, \(r\)
-                                        decreases</label>
-                                </div>
+
                             </div>
 
                             <!-- Question 18: Variable relationship -->
@@ -555,7 +551,8 @@
                                 <p class="fw-bold">19. Given the formula</p>
                                 <p class="mb-2" style="font-size: 1.5em; text-align: center;">\[x = \frac{y}{y^2 + z}\]
                                 </p>
-                                <p class="mb-2">where \(z\) is held constant, as \(y\) increases, what happens to \(x\)?
+                                <p class="mb-2">where \(z\) is held constant and \(y\) is greater than \(z\), as \(y\)
+                                    increases, what happens to \(x\)?
                                 </p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="m19" id="m19a" value="A">
@@ -2368,10 +2365,10 @@
             m14: "Substitute \\(m = 9\\), \\(p = 2\\), and \\(q = 3\\) into \\(n = \\frac{8m}{3p+q}\\): \\(n = \\frac{8(9)}{3(2)+3} = \\frac{72}{6+3} = \\frac{72}{9} = 8\\).",
             m15: "Substitute \\(j = 6\\) and \\(k = -2\\) into \\(i = \\frac{4j+8}{3j+k}\\): \\(i = \\frac{4(6)+8}{3(6)-2} = \\frac{24+8}{18-2} = \\frac{32}{16} = 2\\).",
             // Math Section: Variable Relationships (Questions m16-m19)
-            m16: "Rewriting: f = (h-g)/g + 2 = h/g - 1 + 2 = h/g + 1. Since h is constant, as g increases, h/g decreases, so f decreases. Answer: As g increases, f decreases.",
-            m17: "Since t is constant, (t+5)/√t is a constant factor. The formula becomes r = constant × (s-4). As s increases, (s-4) increases, so r increases proportionally. Answer: As s increases, r increases.",
-            m18: "Rewriting: q = e·(f-d)/d = e·f/d - e. Since e and f are constant, as d increases, f/d decreases, so e·f/d decreases, and therefore q decreases. Answer: As d increases, q decreases.",
-            m19: "Since z is constant, as y increases, the numerator y increases linearly, while the denominator y² + z increases quadratically (dominated by y²). Since the denominator grows faster than the numerator, the ratio decreases. Answer: As y increases, x decreases.",
+            m16: "Hold \\(h\\) constant by choosing \\(h = 10\\). The formula becomes \\(f = \\frac{10 - g}{g} + 2\\). Rewrite the fraction using this rule: \\(\\frac{a - b}{c} = \\frac{a}{c} - \\frac{b}{c}\\): \\(f = \\frac{10}{g} - \\frac{g}{g} + 2\\). Rewrite \\(\\frac{g}{g}\\) using the rule \\(\\frac{a}{a} = 1\\) (any number divided by itself is 1). <br>Then we have \\(f = \\frac{10}{g} - 1 + 2 = \\frac{10}{g} + 1\\). Now pick two values for \\(g\\) and compute two values for \\(f\\). If \\(g = 2\\), then \\(f = \\frac{10}{2} + 1 = 6\\). If \\(g = 5\\), then \\(f = \\frac{10}{5} + 1 = 3\\). As \\(g\\) increases from 2 to 5, \\(f\\) decreases from 6 to 3. Therefore, as \\(g\\) increases, \\(f\\) decreases. Statement C is true.",
+            m17: "Hold \\(t\\) constant by choosing \\(t = 4\\). Then \\(t + 5 = 9\\) and \\(\\sqrt{t} = 2\\), so the formula becomes \\(r = \\frac{9}{2}(s - 4)\\). This is a linear equation in \\(s\\). Now compute two values. If \\(s = 5\\), then \\(r = \\frac{9}{2}(1) = 4.5\\). If \\(s = 7\\), then \\(r = \\frac{9}{2}(3) = 13.5\\). As \\(s\\) increases from 5 to 7, \\(r\\) increases from 4.5 to 13.5. Therefore, as \\(s\\) increases, \\(r\\) increases. Statement A is true.",
+            m18: "Hold \\(e\\) and \\(f\\) constant by choosing \\(e = 2\\) and \\(f = 10\\). The formula becomes \\(q = \\frac{2(10 - d)}{d}\\). Distrubute the 2 in the numerator and rewrite: \\(q = \\frac{20}{d} - \\frac{2d}{d}\\) = \\(q = \\frac{20}{d} - 2\\). (\\(\\frac{2d}{d} = 2\\) because \\(\\frac{d}{d} = 1\\)). Now compute two values. If \\(d = 2\\), then \\(q = \\frac{20}{2} - 2 = 8\\). If \\(d = 5\\), then \\(q = \\frac{20}{5} - 2 = 2\\). As \\(d\\) increases from 2 to 5, \\(q\\) decreases from 8 to 2. Therefore, as \\(d\\) increases, \\(q\\) decreases. Statement C is true.",
+            m19: "This one is tricky! Remeber that exponents mean curved lines in graphs and pay close attention to the constraints of the problem: y is greater than z. Hold \\(z\\) constant by choosing \\(z = 1\\). The formula becomes \\(x = \\frac{y}{y^2 + 1}\\). Now compute two values. If \\(y = 2\\), then \\(x = \\frac{2}{5} = 0.4\\). If \\(y = 4\\), then \\(x = \\frac{4}{17} \\approx 0.235\\). As \\(y\\) increases from 2 to 4, the numerator increases slowly while the denominator increases much faster, causing the fraction to shrink. Therefore, as \\(y\\) increases, \\(x\\) decreases. Statement C is true. <br><br>Here is a graph of the problem with z set to 1, <strong>note that the x axis is the vertical axis and y is the horizontal axis</strong>. Since the problem states y is greater than z, and z is set to 1 in this graph, we look at what happens to x (the vertical axis) as y (the horizontal axis) increases after the value 1.<br><img src=\"assets/images/exam2-graph19.png\" alt=\"Graph for question 19\" style=\"max-width: 50%; margin-top: 10px;\">",
             // Math Section: 2D Graphing and Inequalities (Questions m20-m24)
             m20: "Rewriting: s = 4r - 6. If r < 0, then s = 4r - 6 < -6, so s < 6. Therefore, if r is less than 0, then s is less than 6. (Note: If r > 2, then s > 2, so s is positive, but this is not the only true statement. If s > 10, then r > 4, so r is positive, not negative. If s < 2, then r < 2, not necessarily positive.)",
             m21: "Rewriting: v = 3u + 9. If v < 0, then 3u + 9 < 0, so 3u < -9, which means u < -3. Since u < -3, we have u < 0. Therefore, if v is less than 0, then u is negative. (Note: If u > 1, then v > 12, so v is positive, but this is not the only true statement. If u < 2, then v < 15, not necessarily negative. If v > 3, then u > -2, not necessarily negative.)",
