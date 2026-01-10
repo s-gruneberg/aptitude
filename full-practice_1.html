@@ -95,8 +95,17 @@
 
                     <!-- Math Section -->
                     <div class="card mb-4" id="math-section">
-                        <div class="card-header">
+                        <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">Section 1: Mathematics</h5>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="text-end">
+                                    <div class="small text-muted">Time Remaining:</div>
+                                    <div id="mathTimerDisplay" class="fw-bold fs-5">50:00</div>
+                                </div>
+                                <button id="startMathTimerBtn" class="btn btn-primary btn-sm">Start Timer</button>
+                                <button id="stopMathTimerBtn" class="btn btn-danger btn-sm" style="display: none;">Stop
+                                    Timer</button>
+                            </div>
                         </div>
                         <div class="card-body">
                             <h6 class="mb-3">Pattern Recognition</h6>
@@ -963,8 +972,17 @@
 
                     <!-- Reading Section -->
                     <div class="card mb-4" id="reading-section">
-                        <div class="card-header">
+                        <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">Section 2: Reading Comprehension</h5>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="text-end">
+                                    <div class="small text-muted">Time Remaining:</div>
+                                    <div id="readingTimerDisplay" class="fw-bold fs-5">50:00</div>
+                                </div>
+                                <button id="startReadingTimerBtn" class="btn btn-primary btn-sm">Start Timer</button>
+                                <button id="stopReadingTimerBtn" class="btn btn-danger btn-sm"
+                                    style="display: none;">Stop Timer</button>
+                            </div>
                         </div>
                         <div class="card-body">
                             <!-- Passage 1: World War 1 -->
@@ -1769,7 +1787,8 @@
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="q25" id="q25b" value="B">
-                                            <label class="form-check-label" for="q25b">B. Susceptible to harm, damage, or
+                                            <label class="form-check-label" for="q25b">B. Susceptible to harm, damage,
+                                                or
                                                 negative effects; easily hurt or adversely affected by external forces,
                                                 threats, or changes</label>
                                         </div>
@@ -2012,12 +2031,14 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="q32" id="q32b" value="B">
                                             <label class="form-check-label" for="q32b">B. Of the highest importance or
-                                                priority; supreme, preeminent, or more important than anything else</label>
+                                                priority; supreme, preeminent, or more important than anything
+                                                else</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="q32" id="q32c" value="C">
                                             <label class="form-check-label" for="q32c">C. Equally important as other
-                                                considerations, with no particular priority or special significance</label>
+                                                considerations, with no particular priority or special
+                                                significance</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="q32" id="q32d" value="D">
@@ -2194,6 +2215,49 @@
             </div>
         </div>
     </footer>
+
+    <!-- Math Timer Complete Modal -->
+    <div class="modal fade" id="mathTimerCompleteModal" tabindex="-1" aria-labelledby="mathTimerCompleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mathTimerCompleteModalLabel">Math Section Complete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="lead">You're done with the math section, take a 10 minute break then start the reading
+                        section.</p>
+                    <p><strong>In the actual test, you will not be able to go back and modify your answers to the math
+                            section.</strong> If you want an accurate score, you should not modify your answers after
+                        the time is up.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" id="mathTimerCloseBtn" class="btn btn-success btn-lg">Got it!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reading Timer Complete Modal -->
+    <div class="modal fade" id="readingTimerCompleteModal" tabindex="-1"
+        aria-labelledby="readingTimerCompleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="readingTimerCompleteModalLabel">Reading Section Complete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="lead">Time's up, you're done with the reading section. Click below to grade your exam and
+                        see answer explanations.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" id="readingTimerGradeBtn" class="btn btn-success btn-lg">Grade Exam</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Donation Modal -->
     <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">

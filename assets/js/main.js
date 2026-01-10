@@ -121,27 +121,11 @@ function initExamGrading(answerExplanations) {
     const resultsSection = document.getElementById('resultsSection');
     const scoreDisplay = document.getElementById('scoreDisplay');
     const missedQuestionsDiv = document.getElementById('missedQuestions');
-    const clearBtnTop = document.getElementById('clearAnswersBtnTop');
-    const clearBtnBottom = document.getElementById('clearAnswersBtnBottom');
     const donationModalElement = document.getElementById('donationModal');
     const donationModal = donationModalElement ? new bootstrap.Modal(donationModalElement) : null;
 
-    // Clear button handlers
-    if (clearBtnTop) {
-        clearBtnTop.addEventListener('click', function () {
-            if (confirm('Are you sure you want to clear all answers? This cannot be undone.')) {
-                clearAllAnswers();
-            }
-        });
-    }
-
-    if (clearBtnBottom) {
-        clearBtnBottom.addEventListener('click', function () {
-            if (confirm('Are you sure you want to clear all answers? This cannot be undone.')) {
-                clearAllAnswers();
-            }
-        });
-    }
+    // Initialize timer functionality (this also sets up clear button handlers)
+    initTimers();
 
     if (!gradeBtn) {
         console.error('Grade button not found');
@@ -150,6 +134,8 @@ function initExamGrading(answerExplanations) {
 
     gradeBtn.addEventListener('click', function (e) {
         e.preventDefault();
+        // Stop all timers when grading
+        stopAllTimers();
         try {
             gradeReadingSection(answerExplanations, resultsSection, scoreDisplay, missedQuestionsDiv, donationModal);
         } catch (error) {
@@ -364,5 +350,312 @@ function gradeReadingSection(answerExplanations, resultsSection, scoreDisplay, m
 
     // Scroll to results
     resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/**
+ * Timer functionality for exam sections
+ */
+
+// TIMER LENGTH CONFIGURATION - Change this value to adjust timer duration (in minutes)
+const TIMER_DURATION_MINUTES = 50
+
+let mathTimerInterval = null;
+let readingTimerInterval = null;
+let mathTimerSeconds = 0;
+let readingTimerSeconds = 0;
+let mathTimerRunning = false;
+let readingTimerRunning = false;
+
+/**
+ * Format seconds into MM:SS format
+ */
+function formatTimerTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+}
+
+/**
+ * Update timer display
+ */
+function updateTimerDisplay(timerId, seconds) {
+    const timerElement = document.getElementById(timerId);
+    if (timerElement) {
+        const remaining = TIMER_DURATION_MINUTES * 60 - seconds;
+        if (remaining <= 0) {
+            timerElement.textContent = '00:00';
+        } else {
+            timerElement.textContent = formatTimerTime(remaining);
+        }
+    }
+}
+
+/**
+ * Reset timer display to initial value
+ */
+function resetTimerDisplay(timerId) {
+    const timerElement = document.getElementById(timerId);
+    if (timerElement) {
+        timerElement.textContent = formatTimerTime(TIMER_DURATION_MINUTES * 60);
+    }
+}
+
+/**
+ * Stop and reset math timer
+ */
+function stopMathTimer() {
+    if (mathTimerInterval) {
+        clearInterval(mathTimerInterval);
+        mathTimerInterval = null;
+    }
+    mathTimerRunning = false;
+    mathTimerSeconds = 0;
+
+    const mathTimerBtn = document.getElementById('startMathTimerBtn');
+    const mathStopBtn = document.getElementById('stopMathTimerBtn');
+
+    if (mathTimerBtn) {
+        mathTimerBtn.disabled = false;
+        mathTimerBtn.textContent = 'Start Timer';
+    }
+
+    if (mathStopBtn) {
+        mathStopBtn.style.display = 'none';
+    }
+
+    resetTimerDisplay('mathTimerDisplay');
+}
+
+/**
+ * Stop and reset reading timer
+ */
+function stopReadingTimer() {
+    if (readingTimerInterval) {
+        clearInterval(readingTimerInterval);
+        readingTimerInterval = null;
+    }
+    readingTimerRunning = false;
+    readingTimerSeconds = 0;
+
+    const readingTimerBtn = document.getElementById('startReadingTimerBtn');
+    const readingStopBtn = document.getElementById('stopReadingTimerBtn');
+
+    if (readingTimerBtn) {
+        readingTimerBtn.disabled = false;
+        readingTimerBtn.textContent = 'Start Timer';
+    }
+
+    if (readingStopBtn) {
+        readingStopBtn.style.display = 'none';
+    }
+
+    resetTimerDisplay('readingTimerDisplay');
+}
+
+/**
+ * Stop and reset all timers
+ */
+function stopAllTimers() {
+    stopMathTimer();
+    stopReadingTimer();
+}
+
+/**
+ * Start math section timer
+ */
+function startMathTimer() {
+    if (mathTimerRunning) {
+        return; // Timer already running
+    }
+
+    mathTimerSeconds = 0;
+    mathTimerRunning = true;
+    const mathTimerDisplay = document.getElementById('mathTimerDisplay');
+    const mathTimerBtn = document.getElementById('startMathTimerBtn');
+    const mathStopBtn = document.getElementById('stopMathTimerBtn');
+
+    if (mathTimerBtn) {
+        mathTimerBtn.disabled = true;
+        mathTimerBtn.textContent = 'Timer Running...';
+    }
+
+    if (mathStopBtn) {
+        mathStopBtn.style.display = 'inline-block';
+    }
+
+    mathTimerInterval = setInterval(() => {
+        mathTimerSeconds++;
+        updateTimerDisplay('mathTimerDisplay', mathTimerSeconds);
+
+        // Check if timer duration has passed
+        if (mathTimerSeconds >= TIMER_DURATION_MINUTES * 60) {
+            clearInterval(mathTimerInterval);
+            mathTimerInterval = null;
+            mathTimerRunning = false;
+            showMathTimerCompleteModal();
+
+            // Reset button states
+            if (mathTimerBtn) {
+                mathTimerBtn.disabled = false;
+                mathTimerBtn.textContent = 'Start Timer';
+            }
+            if (mathStopBtn) {
+                mathStopBtn.style.display = 'none';
+            }
+        }
+    }, 1000);
+}
+
+/**
+ * Start reading section timer
+ */
+function startReadingTimer() {
+    if (readingTimerRunning) {
+        return; // Timer already running
+    }
+
+    readingTimerSeconds = 0;
+    readingTimerRunning = true;
+    const readingTimerDisplay = document.getElementById('readingTimerDisplay');
+    const readingTimerBtn = document.getElementById('startReadingTimerBtn');
+    const readingStopBtn = document.getElementById('stopReadingTimerBtn');
+
+    if (readingTimerBtn) {
+        readingTimerBtn.disabled = true;
+        readingTimerBtn.textContent = 'Timer Running...';
+    }
+
+    if (readingStopBtn) {
+        readingStopBtn.style.display = 'inline-block';
+    }
+
+    readingTimerInterval = setInterval(() => {
+        readingTimerSeconds++;
+        updateTimerDisplay('readingTimerDisplay', readingTimerSeconds);
+
+        // Check if timer duration has passed
+        if (readingTimerSeconds >= TIMER_DURATION_MINUTES * 60) {
+            clearInterval(readingTimerInterval);
+            readingTimerInterval = null;
+            readingTimerRunning = false;
+            showReadingTimerCompleteModal();
+
+            // Reset button states
+            if (readingTimerBtn) {
+                readingTimerBtn.disabled = false;
+                readingTimerBtn.textContent = 'Start Timer';
+            }
+            if (readingStopBtn) {
+                readingStopBtn.style.display = 'none';
+            }
+        }
+    }, 1000);
+}
+
+/**
+ * Show modal when math timer completes
+ */
+function showMathTimerCompleteModal() {
+    const modal = document.getElementById('mathTimerCompleteModal');
+    if (modal) {
+        const bootstrapModal = new bootstrap.Modal(modal);
+        bootstrapModal.show();
+    }
+}
+
+/**
+ * Show modal when reading timer completes and trigger grading
+ */
+function showReadingTimerCompleteModal() {
+    const modal = document.getElementById('readingTimerCompleteModal');
+    if (modal) {
+        const bootstrapModal = new bootstrap.Modal(modal);
+        bootstrapModal.show();
+    }
+}
+
+/**
+ * Initialize timer functionality
+ */
+function initTimers() {
+    const startMathBtn = document.getElementById('startMathTimerBtn');
+    const startReadingBtn = document.getElementById('startReadingTimerBtn');
+    const stopMathBtn = document.getElementById('stopMathTimerBtn');
+    const stopReadingBtn = document.getElementById('stopReadingTimerBtn');
+    const mathTimerCloseBtn = document.getElementById('mathTimerCloseBtn');
+    const readingTimerGradeBtn = document.getElementById('readingTimerGradeBtn');
+    const gradeBtn = document.getElementById('gradeExamBtn');
+    const clearBtnTop = document.getElementById('clearAnswersBtnTop');
+    const clearBtnBottom = document.getElementById('clearAnswersBtnBottom');
+
+    if (startMathBtn) {
+        startMathBtn.addEventListener('click', startMathTimer);
+    }
+
+    if (startReadingBtn) {
+        startReadingBtn.addEventListener('click', startReadingTimer);
+    }
+
+    if (stopMathBtn) {
+        stopMathBtn.addEventListener('click', stopMathTimer);
+        stopMathBtn.style.display = 'none'; // Initially hidden
+    }
+
+    if (stopReadingBtn) {
+        stopReadingBtn.addEventListener('click', stopReadingTimer);
+        stopReadingBtn.style.display = 'none'; // Initially hidden
+    }
+
+    if (mathTimerCloseBtn) {
+        mathTimerCloseBtn.addEventListener('click', () => {
+            const modal = document.getElementById('mathTimerCompleteModal');
+            if (modal) {
+                const bootstrapModal = bootstrap.Modal.getInstance(modal);
+                if (bootstrapModal) {
+                    bootstrapModal.hide();
+                }
+            }
+        });
+    }
+
+    if (readingTimerGradeBtn) {
+        readingTimerGradeBtn.addEventListener('click', () => {
+            // Stop all timers
+            stopAllTimers();
+
+            // Close the reading timer modal
+            const readingModal = document.getElementById('readingTimerCompleteModal');
+            if (readingModal) {
+                const bootstrapModal = bootstrap.Modal.getInstance(readingModal);
+                if (bootstrapModal) {
+                    bootstrapModal.hide();
+                }
+            }
+
+            // Trigger the grade exam button click
+            if (gradeBtn) {
+                gradeBtn.click();
+            }
+        });
+    }
+
+    // Stop and reset timers when clear answers buttons are clicked
+    if (clearBtnTop) {
+        clearBtnTop.addEventListener('click', function () {
+            if (confirm('Are you sure you want to clear all answers? This cannot be undone.')) {
+                stopAllTimers();
+                clearAllAnswers();
+            }
+        });
+    }
+
+    if (clearBtnBottom) {
+        clearBtnBottom.addEventListener('click', function () {
+            if (confirm('Are you sure you want to clear all answers? This cannot be undone.')) {
+                stopAllTimers();
+                clearAllAnswers();
+            }
+        });
+    }
 }
 
