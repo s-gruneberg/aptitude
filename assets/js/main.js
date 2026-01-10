@@ -43,7 +43,7 @@ function showNotification(message, type = 'info') {
 }
 
 /**
- * Exam Grading Functions - Shared between full-practice_1.html and full-practice_2.html
+ * Exam Grading Functions - Shared between exam1.html and exam2.html
  */
 
 /**
