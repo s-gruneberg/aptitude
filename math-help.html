@@ -110,7 +110,7 @@
                             <h5 class="mb-0">Overview</h5>
                         </div>
                         <div class="card-body">
-                            <p>The math section of an electrical aptitude test covers typically several key areas:</p>
+                            <p>The math section of an electrical aptitude test typically covers several key areas:</p>
                             <ul>
                                 <li><strong>Algebra:</strong> Solving equations, working with variables, and
                                     manipulating expressions</li>
@@ -201,11 +201,12 @@
                     <!-- Order of Operations and Multivariate Formulas -->
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h5 class="mb-0">Order of Operations and Multivariate Formulas</h5>
+                            <h5 class="mb-0">Order of Operations, Algebraic Simplification, and Multivariate Formulas
+                            </h5>
                         </div>
                         <div class="card-body">
 
-                            <h5>How to approach these problems</h5>
+                            <h5>How to approach Order of Operations and Multivariate Substitution problems</h5>
                             <ul>
                                 <li>These problems are order of operations / PEMDAS problems with extra steps of
                                     variable substitution. </li>
@@ -237,6 +238,106 @@
                                     \[u = \frac{36}{10} = 3.6\]
                                 </li>
                             </ol>
+                            <h5>How to approach Algebraic Simplification problems</h5>
+                            <ul>
+                                <li>Follow order of operations and try to go step by step </li>
+                                <li>If there are fractions, look to cancel out common factors in the numerator and
+                                    denominator. </li>
+                                <li>Watch out for negative signs distributing to parentheses, for example \(-(x + y) =
+                                    -x - y\) not \(-x + y\).</li>
+
+                                <li>
+                                    Only combine like terms.
+                                    Like terms must have the <em>same variables with the same exponents</em>.
+                                    For example:
+                                    \(3x + 5x = 8x\). However,
+                                    \(3x + 5 \neq 8x\);
+                                    \(4x^2 + 2x \neq 6x^2\);
+                                    \(2xy + 3x \neq 5xy\);
+                                    and
+                                    \(5x - 3x^2\) cannot be combined because the exponents are different.
+                                </li>
+                                </li>
+                                <li>Practicing these makes them easier to solve.
+                                </li>
+
+
+                            </ul>
+                            <h5>Worked example</h5>
+                            <p>Note that you are unlikely to see a problem this complex, regardless it's a good example
+                                of a lot of different algebra simplification skills. If you need easier problems to
+                                build up your skills or if
+                                this doesn't make sense, please check out some videos on simplifying algebraic
+                                expressions from a resource like Khan Academy or YouTube.</p>
+                            <p class="mb-3 text-center">
+                                <strong>Given:</strong> Simplify the following expression.
+                            </p>
+
+
+                            <p class="mb-4 text-center" style="font-size: 1.4em;">
+                                \[
+                                p = (4x^2 - 3xy + 6y) - \left(\frac{2x^2y - 4xy}{2x}\right) - \left(-3x + 2y\right)
+                                \]
+                            </p>
+
+                            <ol>
+                                <li class="mb-3">
+                                    <strong>Start with the fraction and look for terms that cancel.</strong><br>
+                                    Factor <em>2xy</em> out of the numerator since both terms have that common factor:
+                                    \[
+                                    \frac{2x^2y - 4xy}{2x}
+                                    =
+                                    \frac{2xy(x - 2)}{2x}
+                                    \]
+                                    Now cancel the common factor of \(2x\):
+                                    \[
+                                    = y(x - 2)
+                                    \]
+                                </li>
+
+                                <li class="mb-3">
+                                    <strong>Rewrite the original expression using the simplified fraction.</strong>
+                                    \[
+                                    p = (4x^2 - 3xy + 6y) - y(x - 2) - (-3x + 2y)
+                                    \]
+                                </li>
+
+                                <li class="mb-3">
+                                    <strong>Distribute the negative signs in front of the parentheses.</strong><br>
+                                    First distribute the minus sign to \(y(x - 2)\):
+                                    \[
+                                    -y(x - 2) = -yx + 2y
+                                    \]
+                                    Next distribute the minus sign across the negative expression:
+                                    \[
+                                    -(-3x + 2y) = +3x - 2y
+                                    \]
+                                </li>
+
+                                <li class="mb-3">
+                                    <strong>Rewrite the expression with all terms expanded.</strong>
+                                    \[
+                                    p = 4x^2 - 3xy + 6y - xy + 2y + 3x - 2y
+                                    \]
+                                </li>
+
+                                <li class="mb-3">
+                                    <strong>Combine like terms.</strong><br>
+                                    Group similar terms:
+                                    \[
+                                    p = 4x^2 - 4xy + 3x + 6y
+                                    \]
+                                </li>
+
+                                <li class="mb-2">
+                                    <strong>Final Answer:</strong>
+                                    \[
+                                    \boxed{p = 4x^2 - 4xy + 3x + 6y}
+                                    \]
+                                </li>
+                            </ol>
+
+
                         </div>
                     </div>
 
@@ -251,7 +352,7 @@
                                 <li>These problems are pretty tricky, don't feel discouraged about them. </li>
                                 <li>Identify which variable is changing and which variable(s) are held constant.</li>
                                 <li>Pick a constant value, and write that in for the constant variable- now you have a
-                                    2d graphing problem instead of 3d.</li>
+                                    2d problem instead of 3d.</li>
                                 <li>Test the changing variable with two easy values (one smaller, one larger) while
                                     holding the constant
                                     fixed; compare the outputs.</li>

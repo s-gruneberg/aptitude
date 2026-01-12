@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://electricalaptitudetestprep.com/sitemap.xml
+
+# Allow all search engines to crawl all pages
+# No pages need to be disallowed for this educational site
