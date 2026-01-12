@@ -60,9 +60,9 @@ function clearAllAnswers() {
  * Get color class based on percentage (for math and reading scores)
  */
 function getColorClass(percent) {
-    if (percent > 70) {
+    if (percent >= 60) {
         return 'bg-success';
-    } else if (percent >= 40 && percent <= 70) {
+    } else if (percent >= 40 && percent < 60) {
         return 'bg-warning';
     } else {
         return 'bg-danger';
@@ -70,12 +70,12 @@ function getColorClass(percent) {
 }
 
 /**
- * Get color class for overall score (40-70 is yellow)
+ * Get color class for overall score (40-60 is yellow)
  */
 function getOverallColorClass(percent) {
-    if (percent > 70) {
+    if (percent >= 60) {
         return 'bg-success';
-    } else if (percent >= 40 && percent <= 70) {
+    } else if (percent >= 40 && percent < 60) {
         return 'bg-warning';
     } else {
         return 'bg-danger';
@@ -259,7 +259,7 @@ function gradeReadingSection(answerExplanations, resultsSection, scoreDisplay, m
                      aria-valuenow="${overallPercentage}" aria-valuemin="0" aria-valuemax="100">${overallPercentage}%</div>
             </div>
             <p class="mb-1">${correct} out of ${total} correct</p>
-            <p class="mb-0 small text-muted"><em>A score of 70% or higher indicates that you have a great chance of passing the test.</em></p>
+            <p class="mb-0 small text-muted"><em>A score of 60% or higher indicates that you have a great chance of passing the test.</em></p>
         </div>
 
         <!-- Math Score -->
