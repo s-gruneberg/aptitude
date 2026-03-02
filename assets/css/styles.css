@@ -20,6 +20,19 @@ body {
 .navbar-brand {
     font-weight: 600;
     font-size: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Logo sizing */
+.site-logo {
+    height: 32px;
+    width: auto;
+}
+
+.hero-logo {
+    height: 160px;
+    width: auto;
 }
 
 /* Footer styling */
@@ -97,5 +110,15 @@ button:focus {
 
     main {
         padding: 1rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .site-logo {
+        height: 26px;
+    }
+
+    .hero-logo {
+        height: 110px;
     }
 }
